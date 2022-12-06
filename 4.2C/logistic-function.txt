@@ -1,0 +1,180 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.functions.SimpleLogistic -I 0 -M 500 -H 50 -W 0.0
+Relation:     KDDTrain
+Instances:    125973
+Attributes:   42
+              duration
+              protocol_type
+              service
+              flag
+              src_bytes
+              dst_bytes
+              land
+              wrong_fragment
+              urgent
+              hot
+              num_failed_logins
+              logged_in
+              num_compromised
+              root_shell
+              su_attempted
+              num_root
+              num_file_creations
+              num_shells
+              num_access_files
+              num_outbound_cmds
+              is_host_login
+              is_guest_login
+              count
+              srv_count
+              serror_rate
+              srv_serror_rate
+              rerror_rate
+              srv_rerror_rate
+              same_srv_rate
+              diff_srv_rate
+              srv_diff_host_rate
+              dst_host_count
+              dst_host_srv_count
+              dst_host_same_srv_rate
+              dst_host_diff_srv_rate
+              dst_host_same_src_port_rate
+              dst_host_srv_diff_host_rate
+              dst_host_serror_rate
+              dst_host_srv_serror_rate
+              dst_host_rerror_rate
+              dst_host_srv_rerror_rate
+              class
+Test mode:    evaluate on training data
+
+=== Classifier model (full training set) ===
+
+SimpleLogistic:
+
+Class normal :
+-1.13 + 
+[protocol_type=udp] * 0.27 +
+[protocol_type=icmp] * -1.37 +
+[service=domain_u] * 1.1  +
+[service=ftp_data] * 0.2  +
+[service=http] * 0.47 +
+[service=IRC] * 1.47 +
+[service=other] * 0.6  +
+[service=private] * -1.48 +
+[service=smtp] * 0.9  +
+[service=telnet] * 0.37 +
+[service=urp_i] * 2.14 +
+[flag=REJ] * 0.55 +
+[flag=RSTR] * -0.6 +
+[flag=S0] * -0.52 +
+[flag=S1] * 1.12 +
+[flag=SF] * 1.54 +
+[wrong_fragment] * -0.4 +
+[hot] * -0.04 +
+[logged_in=1] * -0.17 +
+[count] * -0 +
+[same_srv_rate] * 0.91 +
+[diff_srv_rate] * 0.51 +
+[srv_diff_host_rate] * -0.34 +
+[dst_host_count] * -0 +
+[dst_host_srv_count] * 0    +
+[dst_host_same_src_port_rate] * -0.92 +
+[dst_host_srv_diff_host_rate] * -0.53 +
+[dst_host_srv_serror_rate] * -0.69 +
+[dst_host_rerror_rate] * -0.25
+
+Class anomaly :
+1.13 + 
+[protocol_type=udp] * -0.27 +
+[protocol_type=icmp] * 1.37 +
+[service=domain_u] * -1.1 +
+[service=ftp_data] * -0.2 +
+[service=http] * -0.47 +
+[service=IRC] * -1.47 +
+[service=other] * -0.6 +
+[service=private] * 1.48 +
+[service=smtp] * -0.9 +
+[service=telnet] * -0.37 +
+[service=urp_i] * -2.14 +
+[flag=REJ] * -0.55 +
+[flag=RSTR] * 0.6  +
+[flag=S0] * 0.52 +
+[flag=S1] * -1.12 +
+[flag=SF] * -1.54 +
+[wrong_fragment] * 0.4  +
+[hot] * 0.04 +
+[logged_in=1] * 0.17 +
+[count] * 0    +
+[same_srv_rate] * -0.91 +
+[diff_srv_rate] * -0.51 +
+[srv_diff_host_rate] * 0.34 +
+[dst_host_count] * 0    +
+[dst_host_srv_count] * -0 +
+[dst_host_same_src_port_rate] * 0.92 +
+[dst_host_srv_diff_host_rate] * 0.53 +
+[dst_host_srv_serror_rate] * 0.69 +
+[dst_host_rerror_rate] * 0.25
+
+
+Time taken to build model: 108.73 seconds
+
+=== Evaluation on training set ===
+
+Time taken to test model on training data: 0.55 seconds
+
+=== Summary ===
+
+Correctly Classified Instances      122321               97.101  %
+Incorrectly Classified Instances      3652                2.899  %
+Kappa statistic                          0.9417
+Mean absolute error                      0.0545
+Root mean squared error                  0.1542
+Relative absolute error                 10.9601 %
+Root relative squared error             30.9195 %
+Total Number of Instances           125973     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.982    0.041    0.965      0.982    0.973      0.942    0.993     0.993     normal
+                 0.959    0.018    0.978      0.959    0.969      0.942    0.993     0.994     anomaly
+Weighted Avg.    0.971    0.031    0.971      0.971    0.971      0.942    0.993     0.994     
+
+=== Confusion Matrix ===
+
+     a     b   <-- classified as
+ 66102  1241 |     a = normal
+  2411 56219 |     b = anomaly
+
+
+=== Re-evaluation on test set ===
+
+User supplied test set
+Relation:     KDDTest
+Instances:     unknown (yet). Reading incrementally
+Attributes:   42
+
+=== Summary ===
+
+Correctly Classified Instances       16812               74.5742 %
+Incorrectly Classified Instances      5732               25.4258 %
+Kappa statistic                          0.5079
+Mean absolute error                      0.2531
+Root mean squared error                  0.4535
+Total Number of Instances            22544     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.925    0.390    0.642      0.925    0.758      0.546    0.914     0.888     normal
+                 0.610    0.075    0.915      0.610    0.732      0.546    0.914     0.927     anomaly
+Weighted Avg.    0.746    0.211    0.798      0.746    0.743      0.546    0.914     0.910     
+
+=== Confusion Matrix ===
+
+    a    b   <-- classified as
+ 8987  724 |    a = normal
+ 5008 7825 |    b = anomaly
+
+

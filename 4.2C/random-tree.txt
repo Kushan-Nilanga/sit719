@@ -1,0 +1,1628 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.trees.RandomTree -K 0 -M 1.0 -V 0.001 -S 1
+Relation:     KDDTrain
+Instances:    125973
+Attributes:   42
+              duration
+              protocol_type
+              service
+              flag
+              src_bytes
+              dst_bytes
+              land
+              wrong_fragment
+              urgent
+              hot
+              num_failed_logins
+              logged_in
+              num_compromised
+              root_shell
+              su_attempted
+              num_root
+              num_file_creations
+              num_shells
+              num_access_files
+              num_outbound_cmds
+              is_host_login
+              is_guest_login
+              count
+              srv_count
+              serror_rate
+              srv_serror_rate
+              rerror_rate
+              srv_rerror_rate
+              same_srv_rate
+              diff_srv_rate
+              srv_diff_host_rate
+              dst_host_count
+              dst_host_srv_count
+              dst_host_same_srv_rate
+              dst_host_diff_srv_rate
+              dst_host_same_src_port_rate
+              dst_host_srv_diff_host_rate
+              dst_host_serror_rate
+              dst_host_srv_serror_rate
+              dst_host_rerror_rate
+              dst_host_srv_rerror_rate
+              class
+Test mode:    evaluate on training data
+
+=== Classifier model (full training set) ===
+
+
+RandomTree
+==========
+
+same_srv_rate < 0.49
+|   diff_srv_rate < 0.13
+|   |   dst_host_serror_rate < 0.99
+|   |   |   logged_in = 0
+|   |   |   |   rerror_rate < 0.52
+|   |   |   |   |   srv_serror_rate < 0.5
+|   |   |   |   |   |   dst_host_rerror_rate < 0.01
+|   |   |   |   |   |   |   src_bytes < 24
+|   |   |   |   |   |   |   |   dst_host_count < 84
+|   |   |   |   |   |   |   |   |   dst_host_same_srv_rate < 0.53 : normal (3/0)
+|   |   |   |   |   |   |   |   |   dst_host_same_srv_rate >= 0.53 : anomaly (2/0)
+|   |   |   |   |   |   |   |   dst_host_count >= 84 : anomaly (130/0)
+|   |   |   |   |   |   |   src_bytes >= 24 : normal (149/0)
+|   |   |   |   |   |   dst_host_rerror_rate >= 0.01
+|   |   |   |   |   |   |   flag = OTH : normal (0/0)
+|   |   |   |   |   |   |   flag = REJ : normal (12/0)
+|   |   |   |   |   |   |   flag = RSTO : normal (0/0)
+|   |   |   |   |   |   |   flag = RSTOS0 : normal (0/0)
+|   |   |   |   |   |   |   flag = RSTR : anomaly (2/0)
+|   |   |   |   |   |   |   flag = S0 : normal (0/0)
+|   |   |   |   |   |   |   flag = S1 : normal (0/0)
+|   |   |   |   |   |   |   flag = S2 : normal (0/0)
+|   |   |   |   |   |   |   flag = S3 : normal (0/0)
+|   |   |   |   |   |   |   flag = SF
+|   |   |   |   |   |   |   |   protocol_type = tcp : normal (0/0)
+|   |   |   |   |   |   |   |   protocol_type = udp : anomaly (290/0)
+|   |   |   |   |   |   |   |   protocol_type = icmp
+|   |   |   |   |   |   |   |   |   diff_srv_rate < 0.07 : normal (1/0)
+|   |   |   |   |   |   |   |   |   diff_srv_rate >= 0.07 : anomaly (1/0)
+|   |   |   |   |   |   |   flag = SH : normal (0/0)
+|   |   |   |   |   srv_serror_rate >= 0.5 : anomaly (600/0)
+|   |   |   |   rerror_rate >= 0.52 : anomaly (6860/0)
+|   |   |   logged_in = 1
+|   |   |   |   rerror_rate < 0.01
+|   |   |   |   |   duration < 92.5 : normal (82/0)
+|   |   |   |   |   duration >= 92.5
+|   |   |   |   |   |   diff_srv_rate < 0.08 : normal (3/0)
+|   |   |   |   |   |   diff_srv_rate >= 0.08
+|   |   |   |   |   |   |   dst_bytes < 83139 : anomaly (1/0)
+|   |   |   |   |   |   |   dst_bytes >= 83139 : normal (1/0)
+|   |   |   |   rerror_rate >= 0.01
+|   |   |   |   |   dst_host_same_src_port_rate < 0.09
+|   |   |   |   |   |   src_bytes < 6290.5 : normal (3/0)
+|   |   |   |   |   |   src_bytes >= 6290.5 : anomaly (1/0)
+|   |   |   |   |   dst_host_same_src_port_rate >= 0.09 : anomaly (1/0)
+|   |   dst_host_serror_rate >= 0.99
+|   |   |   serror_rate < 0.99
+|   |   |   |   dst_host_same_src_port_rate < 0.01
+|   |   |   |   |   rerror_rate < 0.01
+|   |   |   |   |   |   srv_count < 1.5
+|   |   |   |   |   |   |   dst_host_srv_serror_rate < 0.5 : normal (1/0)
+|   |   |   |   |   |   |   dst_host_srv_serror_rate >= 0.5 : anomaly (18/0)
+|   |   |   |   |   |   srv_count >= 1.5 : anomaly (238/0)
+|   |   |   |   |   rerror_rate >= 0.01 : anomaly (64/0)
+|   |   |   |   dst_host_same_src_port_rate >= 0.01 : anomaly (96/0)
+|   |   |   serror_rate >= 0.99 : anomaly (30796/0)
+|   diff_srv_rate >= 0.13
+|   |   count < 12.5
+|   |   |   protocol_type = tcp
+|   |   |   |   flag = OTH : normal (0/0)
+|   |   |   |   flag = REJ : anomaly (52/0)
+|   |   |   |   flag = RSTO : normal (5/0)
+|   |   |   |   flag = RSTOS0 : anomaly (2/0)
+|   |   |   |   flag = RSTR
+|   |   |   |   |   dst_bytes < 1397 : anomaly (8/0)
+|   |   |   |   |   dst_bytes >= 1397 : normal (8/0)
+|   |   |   |   flag = S0
+|   |   |   |   |   service = aol : normal (0/0)
+|   |   |   |   |   service = auth : anomaly (3/0)
+|   |   |   |   |   service = bgp : anomaly (4/0)
+|   |   |   |   |   service = courier : anomaly (4/0)
+|   |   |   |   |   service = csnet_ns : anomaly (1/0)
+|   |   |   |   |   service = ctf : normal (0/0)
+|   |   |   |   |   service = daytime : anomaly (4/0)
+|   |   |   |   |   service = discard : anomaly (8/0)
+|   |   |   |   |   service = domain : anomaly (7/0)
+|   |   |   |   |   service = domain_u : normal (0/0)
+|   |   |   |   |   service = echo : normal (0/0)
+|   |   |   |   |   service = eco_i : normal (0/0)
+|   |   |   |   |   service = ecr_i : normal (0/0)
+|   |   |   |   |   service = efs : normal (0/0)
+|   |   |   |   |   service = exec : anomaly (5/0)
+|   |   |   |   |   service = finger
+|   |   |   |   |   |   dst_host_srv_diff_host_rate < 0.15 : anomaly (75/0)
+|   |   |   |   |   |   dst_host_srv_diff_host_rate >= 0.15 : normal (1/0)
+|   |   |   |   |   service = ftp : normal (0/0)
+|   |   |   |   |   service = ftp_data : anomaly (44/0)
+|   |   |   |   |   service = gopher : normal (0/0)
+|   |   |   |   |   service = harvest : normal (0/0)
+|   |   |   |   |   service = hostnames : anomaly (1/0)
+|   |   |   |   |   service = http : anomaly (40/0)
+|   |   |   |   |   service = http_2784 : normal (0/0)
+|   |   |   |   |   service = http_443 : anomaly (4/0)
+|   |   |   |   |   service = http_8001 : normal (0/0)
+|   |   |   |   |   service = imap4 : anomaly (1/0)
+|   |   |   |   |   service = IRC : normal (0/0)
+|   |   |   |   |   service = iso_tsap : normal (0/0)
+|   |   |   |   |   service = klogin : anomaly (6/0)
+|   |   |   |   |   service = kshell : normal (0/0)
+|   |   |   |   |   service = ldap : normal (0/0)
+|   |   |   |   |   service = link : anomaly (4/0)
+|   |   |   |   |   service = login : anomaly (3/0)
+|   |   |   |   |   service = mtp : normal (0/0)
+|   |   |   |   |   service = name : normal (0/0)
+|   |   |   |   |   service = netbios_dgm : anomaly (1/0)
+|   |   |   |   |   service = netbios_ns : normal (0/0)
+|   |   |   |   |   service = netbios_ssn : anomaly (2/0)
+|   |   |   |   |   service = netstat : anomaly (2/0)
+|   |   |   |   |   service = nnsp : anomaly (2/0)
+|   |   |   |   |   service = nntp : anomaly (2/0)
+|   |   |   |   |   service = ntp_u : normal (0/0)
+|   |   |   |   |   service = other : normal (0/0)
+|   |   |   |   |   service = pm_dump : normal (0/0)
+|   |   |   |   |   service = pop_2 : normal (0/0)
+|   |   |   |   |   service = pop_3 : normal (0/0)
+|   |   |   |   |   service = printer : anomaly (1/0)
+|   |   |   |   |   service = private : anomaly (63/0)
+|   |   |   |   |   service = red_i : normal (0/0)
+|   |   |   |   |   service = remote_job : normal (0/0)
+|   |   |   |   |   service = rje : anomaly (1/0)
+|   |   |   |   |   service = shell : normal (0/0)
+|   |   |   |   |   service = smtp : normal (2/0)
+|   |   |   |   |   service = sql_net : anomaly (2/0)
+|   |   |   |   |   service = ssh : anomaly (4/0)
+|   |   |   |   |   service = sunrpc : anomaly (1/0)
+|   |   |   |   |   service = supdup : anomaly (7/0)
+|   |   |   |   |   service = systat : anomaly (1/0)
+|   |   |   |   |   service = telnet : anomaly (48/0)
+|   |   |   |   |   service = tftp_u : normal (0/0)
+|   |   |   |   |   service = tim_i : normal (0/0)
+|   |   |   |   |   service = time : normal (0/0)
+|   |   |   |   |   service = urh_i : normal (0/0)
+|   |   |   |   |   service = urp_i : normal (0/0)
+|   |   |   |   |   service = uucp : anomaly (2/0)
+|   |   |   |   |   service = uucp_path : anomaly (3/0)
+|   |   |   |   |   service = vmnet : normal (0/0)
+|   |   |   |   |   service = whois : anomaly (3/0)
+|   |   |   |   |   service = X11 : normal (0/0)
+|   |   |   |   |   service = Z39_50 : anomaly (4/0)
+|   |   |   |   flag = S1 : normal (6/0)
+|   |   |   |   flag = S2 : normal (0/0)
+|   |   |   |   flag = S3 : normal (0/0)
+|   |   |   |   flag = SF
+|   |   |   |   |   dst_host_diff_srv_rate < 0.06
+|   |   |   |   |   |   dst_host_same_src_port_rate < 0.01
+|   |   |   |   |   |   |   service = aol : normal (0/0)
+|   |   |   |   |   |   |   service = auth : normal (5/0)
+|   |   |   |   |   |   |   service = bgp : normal (0/0)
+|   |   |   |   |   |   |   service = courier : normal (0/0)
+|   |   |   |   |   |   |   service = csnet_ns : normal (0/0)
+|   |   |   |   |   |   |   service = ctf : normal (0/0)
+|   |   |   |   |   |   |   service = daytime : normal (0/0)
+|   |   |   |   |   |   |   service = discard : normal (0/0)
+|   |   |   |   |   |   |   service = domain : normal (5/0)
+|   |   |   |   |   |   |   service = domain_u : normal (0/0)
+|   |   |   |   |   |   |   service = echo : normal (0/0)
+|   |   |   |   |   |   |   service = eco_i : normal (0/0)
+|   |   |   |   |   |   |   service = ecr_i : normal (0/0)
+|   |   |   |   |   |   |   service = efs : normal (0/0)
+|   |   |   |   |   |   |   service = exec : normal (0/0)
+|   |   |   |   |   |   |   service = finger : normal (4/0)
+|   |   |   |   |   |   |   service = ftp
+|   |   |   |   |   |   |   |   logged_in = 0 : anomaly (1/0)
+|   |   |   |   |   |   |   |   logged_in = 1 : normal (1/0)
+|   |   |   |   |   |   |   service = ftp_data : normal (1/0)
+|   |   |   |   |   |   |   service = gopher : normal (0/0)
+|   |   |   |   |   |   |   service = harvest : normal (0/0)
+|   |   |   |   |   |   |   service = hostnames : normal (0/0)
+|   |   |   |   |   |   |   service = http : normal (0/0)
+|   |   |   |   |   |   |   service = http_2784 : normal (0/0)
+|   |   |   |   |   |   |   service = http_443 : normal (0/0)
+|   |   |   |   |   |   |   service = http_8001 : normal (0/0)
+|   |   |   |   |   |   |   service = imap4 : normal (0/0)
+|   |   |   |   |   |   |   service = IRC : normal (0/0)
+|   |   |   |   |   |   |   service = iso_tsap : normal (0/0)
+|   |   |   |   |   |   |   service = klogin : normal (0/0)
+|   |   |   |   |   |   |   service = kshell : normal (0/0)
+|   |   |   |   |   |   |   service = ldap : normal (0/0)
+|   |   |   |   |   |   |   service = link : normal (0/0)
+|   |   |   |   |   |   |   service = login : normal (0/0)
+|   |   |   |   |   |   |   service = mtp : normal (0/0)
+|   |   |   |   |   |   |   service = name : normal (0/0)
+|   |   |   |   |   |   |   service = netbios_dgm : normal (0/0)
+|   |   |   |   |   |   |   service = netbios_ns : normal (0/0)
+|   |   |   |   |   |   |   service = netbios_ssn : normal (0/0)
+|   |   |   |   |   |   |   service = netstat : normal (0/0)
+|   |   |   |   |   |   |   service = nnsp : normal (0/0)
+|   |   |   |   |   |   |   service = nntp : normal (0/0)
+|   |   |   |   |   |   |   service = ntp_u : normal (0/0)
+|   |   |   |   |   |   |   service = other : normal (0/0)
+|   |   |   |   |   |   |   service = pm_dump : normal (0/0)
+|   |   |   |   |   |   |   service = pop_2 : normal (0/0)
+|   |   |   |   |   |   |   service = pop_3 : normal (2/0)
+|   |   |   |   |   |   |   service = printer : normal (0/0)
+|   |   |   |   |   |   |   service = private : normal (0/0)
+|   |   |   |   |   |   |   service = red_i : normal (0/0)
+|   |   |   |   |   |   |   service = remote_job : normal (0/0)
+|   |   |   |   |   |   |   service = rje : normal (0/0)
+|   |   |   |   |   |   |   service = shell : normal (0/0)
+|   |   |   |   |   |   |   service = smtp : normal (17/0)
+|   |   |   |   |   |   |   service = sql_net : normal (0/0)
+|   |   |   |   |   |   |   service = ssh : normal (0/0)
+|   |   |   |   |   |   |   service = sunrpc : normal (0/0)
+|   |   |   |   |   |   |   service = supdup : normal (0/0)
+|   |   |   |   |   |   |   service = systat : normal (0/0)
+|   |   |   |   |   |   |   service = telnet
+|   |   |   |   |   |   |   |   dst_host_srv_count < 1.5 : normal (1/0)
+|   |   |   |   |   |   |   |   dst_host_srv_count >= 1.5 : anomaly (1/0)
+|   |   |   |   |   |   |   service = tftp_u : normal (0/0)
+|   |   |   |   |   |   |   service = tim_i : normal (0/0)
+|   |   |   |   |   |   |   service = time : normal (0/0)
+|   |   |   |   |   |   |   service = urh_i : normal (0/0)
+|   |   |   |   |   |   |   service = urp_i : normal (0/0)
+|   |   |   |   |   |   |   service = uucp : normal (0/0)
+|   |   |   |   |   |   |   service = uucp_path : normal (0/0)
+|   |   |   |   |   |   |   service = vmnet : normal (0/0)
+|   |   |   |   |   |   |   service = whois : normal (0/0)
+|   |   |   |   |   |   |   service = X11 : normal (0/0)
+|   |   |   |   |   |   |   service = Z39_50 : normal (0/0)
+|   |   |   |   |   |   dst_host_same_src_port_rate >= 0.01 : normal (70/0)
+|   |   |   |   |   dst_host_diff_srv_rate >= 0.06
+|   |   |   |   |   |   dst_host_same_src_port_rate < 0.01
+|   |   |   |   |   |   |   src_bytes < 170.5
+|   |   |   |   |   |   |   |   dst_host_same_srv_rate < 0.01 : anomaly (5/0)
+|   |   |   |   |   |   |   |   dst_host_same_srv_rate >= 0.01
+|   |   |   |   |   |   |   |   |   diff_srv_rate < 0.69
+|   |   |   |   |   |   |   |   |   |   dst_host_serror_rate < 0.01 : normal (3/0)
+|   |   |   |   |   |   |   |   |   |   dst_host_serror_rate >= 0.01
+|   |   |   |   |   |   |   |   |   |   |   dst_host_same_srv_rate < 0.03
+|   |   |   |   |   |   |   |   |   |   |   |   dst_host_same_srv_rate < 0.01
+|   |   |   |   |   |   |   |   |   |   |   |   |   service = aol : normal (0/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   service = auth : normal (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   service = bgp : normal (0/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   service = courier : normal (0/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   service = csnet_ns : normal (0/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   service = ctf : normal (0/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   service = daytime : normal (0/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   service = discard : normal (0/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   service = domain : normal (0/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   service = domain_u : normal (0/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   service = echo : normal (0/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   service = eco_i : normal (0/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   service = ecr_i : normal (0/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   service = efs : normal (0/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   service = exec : normal (0/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   service = finger : normal (0/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   service = ftp : anomaly (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   service = ftp_data : normal (0/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   service = gopher : normal (0/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   service = harvest : normal (0/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   service = hostnames : normal (0/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   service = http : normal (0/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   service = http_2784 : normal (0/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   service = http_443 : normal (0/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   service = http_8001 : normal (0/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   service = imap4 : normal (0/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   service = IRC : normal (0/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   service = iso_tsap : normal (0/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   service = klogin : normal (0/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   service = kshell : normal (0/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   service = ldap : normal (0/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   service = link : normal (0/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   service = login : normal (0/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   service = mtp : normal (0/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   service = name : normal (0/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   service = netbios_dgm : normal (0/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   service = netbios_ns : normal (0/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   service = netbios_ssn : normal (0/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   service = netstat : normal (0/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   service = nnsp : normal (0/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   service = nntp : normal (0/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   service = ntp_u : normal (0/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   service = other : normal (0/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   service = pm_dump : normal (0/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   service = pop_2 : normal (0/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   service = pop_3 : normal (0/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   service = printer : normal (0/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   service = private : normal (0/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   service = red_i : normal (0/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   service = remote_job : normal (0/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   service = rje : normal (0/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   service = shell : normal (0/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   service = smtp : normal (0/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   service = sql_net : normal (0/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   service = ssh : normal (0/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   service = sunrpc : normal (0/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   service = supdup : normal (0/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   service = systat : normal (0/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   service = telnet : normal (0/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   service = tftp_u : normal (0/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   service = tim_i : normal (0/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   service = time : normal (0/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   service = urh_i : normal (0/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   service = urp_i : normal (0/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   service = uucp : normal (0/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   service = uucp_path : normal (0/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   service = vmnet : normal (0/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   service = whois : normal (0/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   service = X11 : normal (0/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   service = Z39_50 : normal (0/0)
+|   |   |   |   |   |   |   |   |   |   |   |   dst_host_same_srv_rate >= 0.01 : normal (1/0)
+|   |   |   |   |   |   |   |   |   |   |   dst_host_same_srv_rate >= 0.03 : anomaly (1/0)
+|   |   |   |   |   |   |   |   |   diff_srv_rate >= 0.69
+|   |   |   |   |   |   |   |   |   |   dst_host_diff_srv_rate < 0.44
+|   |   |   |   |   |   |   |   |   |   |   dst_host_diff_srv_rate < 0.07
+|   |   |   |   |   |   |   |   |   |   |   |   dst_host_srv_count < 4 : anomaly (2/0)
+|   |   |   |   |   |   |   |   |   |   |   |   dst_host_srv_count >= 4 : normal (2/0)
+|   |   |   |   |   |   |   |   |   |   |   dst_host_diff_srv_rate >= 0.07 : anomaly (10/0)
+|   |   |   |   |   |   |   |   |   |   dst_host_diff_srv_rate >= 0.44 : normal (1/0)
+|   |   |   |   |   |   |   src_bytes >= 170.5
+|   |   |   |   |   |   |   |   dst_bytes < 370.5 : normal (18/0)
+|   |   |   |   |   |   |   |   dst_bytes >= 370.5
+|   |   |   |   |   |   |   |   |   dst_host_srv_count < 77 : normal (1/0)
+|   |   |   |   |   |   |   |   |   dst_host_srv_count >= 77 : anomaly (1/0)
+|   |   |   |   |   |   dst_host_same_src_port_rate >= 0.01 : normal (101/0)
+|   |   |   |   flag = SH : anomaly (6/0)
+|   |   |   protocol_type = udp
+|   |   |   |   dst_bytes < 16
+|   |   |   |   |   dst_host_srv_count < 1.5
+|   |   |   |   |   |   serror_rate < 0.07
+|   |   |   |   |   |   |   dst_bytes < 0.5
+|   |   |   |   |   |   |   |   same_srv_rate < 0.18
+|   |   |   |   |   |   |   |   |   count < 9.5
+|   |   |   |   |   |   |   |   |   |   dst_host_rerror_rate < 0.04
+|   |   |   |   |   |   |   |   |   |   |   src_bytes < 73 : anomaly (7/0)
+|   |   |   |   |   |   |   |   |   |   |   src_bytes >= 73 : normal (5/0)
+|   |   |   |   |   |   |   |   |   |   dst_host_rerror_rate >= 0.04 : anomaly (6/0)
+|   |   |   |   |   |   |   |   |   count >= 9.5
+|   |   |   |   |   |   |   |   |   |   dst_host_diff_srv_rate < 0.54 : anomaly (36/0)
+|   |   |   |   |   |   |   |   |   |   dst_host_diff_srv_rate >= 0.54
+|   |   |   |   |   |   |   |   |   |   |   diff_srv_rate < 0.34 : normal (1/0)
+|   |   |   |   |   |   |   |   |   |   |   diff_srv_rate >= 0.34 : anomaly (6/0)
+|   |   |   |   |   |   |   |   same_srv_rate >= 0.18
+|   |   |   |   |   |   |   |   |   count < 3.5
+|   |   |   |   |   |   |   |   |   |   service = aol : normal (0/0)
+|   |   |   |   |   |   |   |   |   |   service = auth : normal (0/0)
+|   |   |   |   |   |   |   |   |   |   service = bgp : normal (0/0)
+|   |   |   |   |   |   |   |   |   |   service = courier : normal (0/0)
+|   |   |   |   |   |   |   |   |   |   service = csnet_ns : normal (0/0)
+|   |   |   |   |   |   |   |   |   |   service = ctf : normal (0/0)
+|   |   |   |   |   |   |   |   |   |   service = daytime : normal (0/0)
+|   |   |   |   |   |   |   |   |   |   service = discard : normal (0/0)
+|   |   |   |   |   |   |   |   |   |   service = domain : normal (0/0)
+|   |   |   |   |   |   |   |   |   |   service = domain_u : normal (0/0)
+|   |   |   |   |   |   |   |   |   |   service = echo : normal (0/0)
+|   |   |   |   |   |   |   |   |   |   service = eco_i : normal (0/0)
+|   |   |   |   |   |   |   |   |   |   service = ecr_i : normal (0/0)
+|   |   |   |   |   |   |   |   |   |   service = efs : normal (0/0)
+|   |   |   |   |   |   |   |   |   |   service = exec : normal (0/0)
+|   |   |   |   |   |   |   |   |   |   service = finger : normal (0/0)
+|   |   |   |   |   |   |   |   |   |   service = ftp : normal (0/0)
+|   |   |   |   |   |   |   |   |   |   service = ftp_data : normal (0/0)
+|   |   |   |   |   |   |   |   |   |   service = gopher : normal (0/0)
+|   |   |   |   |   |   |   |   |   |   service = harvest : normal (0/0)
+|   |   |   |   |   |   |   |   |   |   service = hostnames : normal (0/0)
+|   |   |   |   |   |   |   |   |   |   service = http : normal (0/0)
+|   |   |   |   |   |   |   |   |   |   service = http_2784 : normal (0/0)
+|   |   |   |   |   |   |   |   |   |   service = http_443 : normal (0/0)
+|   |   |   |   |   |   |   |   |   |   service = http_8001 : normal (0/0)
+|   |   |   |   |   |   |   |   |   |   service = imap4 : normal (0/0)
+|   |   |   |   |   |   |   |   |   |   service = IRC : normal (0/0)
+|   |   |   |   |   |   |   |   |   |   service = iso_tsap : normal (0/0)
+|   |   |   |   |   |   |   |   |   |   service = klogin : normal (0/0)
+|   |   |   |   |   |   |   |   |   |   service = kshell : normal (0/0)
+|   |   |   |   |   |   |   |   |   |   service = ldap : normal (0/0)
+|   |   |   |   |   |   |   |   |   |   service = link : normal (0/0)
+|   |   |   |   |   |   |   |   |   |   service = login : normal (0/0)
+|   |   |   |   |   |   |   |   |   |   service = mtp : normal (0/0)
+|   |   |   |   |   |   |   |   |   |   service = name : normal (0/0)
+|   |   |   |   |   |   |   |   |   |   service = netbios_dgm : normal (0/0)
+|   |   |   |   |   |   |   |   |   |   service = netbios_ns : normal (0/0)
+|   |   |   |   |   |   |   |   |   |   service = netbios_ssn : normal (0/0)
+|   |   |   |   |   |   |   |   |   |   service = netstat : normal (0/0)
+|   |   |   |   |   |   |   |   |   |   service = nnsp : normal (0/0)
+|   |   |   |   |   |   |   |   |   |   service = nntp : normal (0/0)
+|   |   |   |   |   |   |   |   |   |   service = ntp_u : normal (0/0)
+|   |   |   |   |   |   |   |   |   |   service = other : normal (71/0)
+|   |   |   |   |   |   |   |   |   |   service = pm_dump : normal (0/0)
+|   |   |   |   |   |   |   |   |   |   service = pop_2 : normal (0/0)
+|   |   |   |   |   |   |   |   |   |   service = pop_3 : normal (0/0)
+|   |   |   |   |   |   |   |   |   |   service = printer : normal (0/0)
+|   |   |   |   |   |   |   |   |   |   service = private : anomaly (1/0)
+|   |   |   |   |   |   |   |   |   |   service = red_i : normal (0/0)
+|   |   |   |   |   |   |   |   |   |   service = remote_job : normal (0/0)
+|   |   |   |   |   |   |   |   |   |   service = rje : normal (0/0)
+|   |   |   |   |   |   |   |   |   |   service = shell : normal (0/0)
+|   |   |   |   |   |   |   |   |   |   service = smtp : normal (0/0)
+|   |   |   |   |   |   |   |   |   |   service = sql_net : normal (0/0)
+|   |   |   |   |   |   |   |   |   |   service = ssh : normal (0/0)
+|   |   |   |   |   |   |   |   |   |   service = sunrpc : normal (0/0)
+|   |   |   |   |   |   |   |   |   |   service = supdup : normal (0/0)
+|   |   |   |   |   |   |   |   |   |   service = systat : normal (0/0)
+|   |   |   |   |   |   |   |   |   |   service = telnet : normal (0/0)
+|   |   |   |   |   |   |   |   |   |   service = tftp_u : normal (0/0)
+|   |   |   |   |   |   |   |   |   |   service = tim_i : normal (0/0)
+|   |   |   |   |   |   |   |   |   |   service = time : normal (0/0)
+|   |   |   |   |   |   |   |   |   |   service = urh_i : normal (0/0)
+|   |   |   |   |   |   |   |   |   |   service = urp_i : normal (0/0)
+|   |   |   |   |   |   |   |   |   |   service = uucp : normal (0/0)
+|   |   |   |   |   |   |   |   |   |   service = uucp_path : normal (0/0)
+|   |   |   |   |   |   |   |   |   |   service = vmnet : normal (0/0)
+|   |   |   |   |   |   |   |   |   |   service = whois : normal (0/0)
+|   |   |   |   |   |   |   |   |   |   service = X11 : normal (0/0)
+|   |   |   |   |   |   |   |   |   |   service = Z39_50 : normal (0/0)
+|   |   |   |   |   |   |   |   |   count >= 3.5
+|   |   |   |   |   |   |   |   |   |   dst_host_diff_srv_rate < 0.23
+|   |   |   |   |   |   |   |   |   |   |   dst_host_same_src_port_rate < 0.72
+|   |   |   |   |   |   |   |   |   |   |   |   dst_host_serror_rate < 0.01 : normal (16/0)
+|   |   |   |   |   |   |   |   |   |   |   |   dst_host_serror_rate >= 0.01 : anomaly (1/0)
+|   |   |   |   |   |   |   |   |   |   |   dst_host_same_src_port_rate >= 0.72 : anomaly (4/0)
+|   |   |   |   |   |   |   |   |   |   dst_host_diff_srv_rate >= 0.23
+|   |   |   |   |   |   |   |   |   |   |   count < 4.5 : normal (17/0)
+|   |   |   |   |   |   |   |   |   |   |   count >= 4.5
+|   |   |   |   |   |   |   |   |   |   |   |   src_bytes < 73.5 : anomaly (3/0)
+|   |   |   |   |   |   |   |   |   |   |   |   src_bytes >= 73.5 : normal (59/0)
+|   |   |   |   |   |   |   dst_bytes >= 0.5 : anomaly (1/0)
+|   |   |   |   |   |   serror_rate >= 0.07 : normal (14/0)
+|   |   |   |   |   dst_host_srv_count >= 1.5
+|   |   |   |   |   |   diff_srv_rate < 0.56 : anomaly (61/0)
+|   |   |   |   |   |   diff_srv_rate >= 0.56
+|   |   |   |   |   |   |   service = aol : normal (0/0)
+|   |   |   |   |   |   |   service = auth : normal (0/0)
+|   |   |   |   |   |   |   service = bgp : normal (0/0)
+|   |   |   |   |   |   |   service = courier : normal (0/0)
+|   |   |   |   |   |   |   service = csnet_ns : normal (0/0)
+|   |   |   |   |   |   |   service = ctf : normal (0/0)
+|   |   |   |   |   |   |   service = daytime : normal (0/0)
+|   |   |   |   |   |   |   service = discard : normal (0/0)
+|   |   |   |   |   |   |   service = domain : normal (0/0)
+|   |   |   |   |   |   |   service = domain_u : normal (1/0)
+|   |   |   |   |   |   |   service = echo : normal (0/0)
+|   |   |   |   |   |   |   service = eco_i : normal (0/0)
+|   |   |   |   |   |   |   service = ecr_i : normal (0/0)
+|   |   |   |   |   |   |   service = efs : normal (0/0)
+|   |   |   |   |   |   |   service = exec : normal (0/0)
+|   |   |   |   |   |   |   service = finger : normal (0/0)
+|   |   |   |   |   |   |   service = ftp : normal (0/0)
+|   |   |   |   |   |   |   service = ftp_data : normal (0/0)
+|   |   |   |   |   |   |   service = gopher : normal (0/0)
+|   |   |   |   |   |   |   service = harvest : normal (0/0)
+|   |   |   |   |   |   |   service = hostnames : normal (0/0)
+|   |   |   |   |   |   |   service = http : normal (0/0)
+|   |   |   |   |   |   |   service = http_2784 : normal (0/0)
+|   |   |   |   |   |   |   service = http_443 : normal (0/0)
+|   |   |   |   |   |   |   service = http_8001 : normal (0/0)
+|   |   |   |   |   |   |   service = imap4 : normal (0/0)
+|   |   |   |   |   |   |   service = IRC : normal (0/0)
+|   |   |   |   |   |   |   service = iso_tsap : normal (0/0)
+|   |   |   |   |   |   |   service = klogin : normal (0/0)
+|   |   |   |   |   |   |   service = kshell : normal (0/0)
+|   |   |   |   |   |   |   service = ldap : normal (0/0)
+|   |   |   |   |   |   |   service = link : normal (0/0)
+|   |   |   |   |   |   |   service = login : normal (0/0)
+|   |   |   |   |   |   |   service = mtp : normal (0/0)
+|   |   |   |   |   |   |   service = name : normal (0/0)
+|   |   |   |   |   |   |   service = netbios_dgm : normal (0/0)
+|   |   |   |   |   |   |   service = netbios_ns : normal (0/0)
+|   |   |   |   |   |   |   service = netbios_ssn : normal (0/0)
+|   |   |   |   |   |   |   service = netstat : normal (0/0)
+|   |   |   |   |   |   |   service = nnsp : normal (0/0)
+|   |   |   |   |   |   |   service = nntp : normal (0/0)
+|   |   |   |   |   |   |   service = ntp_u : normal (0/0)
+|   |   |   |   |   |   |   service = other
+|   |   |   |   |   |   |   |   dst_host_diff_srv_rate < 0.29 : anomaly (4/0)
+|   |   |   |   |   |   |   |   dst_host_diff_srv_rate >= 0.29 : normal (38/0)
+|   |   |   |   |   |   |   service = pm_dump : normal (0/0)
+|   |   |   |   |   |   |   service = pop_2 : normal (0/0)
+|   |   |   |   |   |   |   service = pop_3 : normal (0/0)
+|   |   |   |   |   |   |   service = printer : normal (0/0)
+|   |   |   |   |   |   |   service = private : anomaly (10/0)
+|   |   |   |   |   |   |   service = red_i : normal (0/0)
+|   |   |   |   |   |   |   service = remote_job : normal (0/0)
+|   |   |   |   |   |   |   service = rje : normal (0/0)
+|   |   |   |   |   |   |   service = shell : normal (0/0)
+|   |   |   |   |   |   |   service = smtp : normal (0/0)
+|   |   |   |   |   |   |   service = sql_net : normal (0/0)
+|   |   |   |   |   |   |   service = ssh : normal (0/0)
+|   |   |   |   |   |   |   service = sunrpc : normal (0/0)
+|   |   |   |   |   |   |   service = supdup : normal (0/0)
+|   |   |   |   |   |   |   service = systat : normal (0/0)
+|   |   |   |   |   |   |   service = telnet : normal (0/0)
+|   |   |   |   |   |   |   service = tftp_u : normal (0/0)
+|   |   |   |   |   |   |   service = tim_i : normal (0/0)
+|   |   |   |   |   |   |   service = time : normal (0/0)
+|   |   |   |   |   |   |   service = urh_i : normal (0/0)
+|   |   |   |   |   |   |   service = urp_i : normal (0/0)
+|   |   |   |   |   |   |   service = uucp : normal (0/0)
+|   |   |   |   |   |   |   service = uucp_path : normal (0/0)
+|   |   |   |   |   |   |   service = vmnet : normal (0/0)
+|   |   |   |   |   |   |   service = whois : normal (0/0)
+|   |   |   |   |   |   |   service = X11 : normal (0/0)
+|   |   |   |   |   |   |   service = Z39_50 : normal (0/0)
+|   |   |   |   dst_bytes >= 16
+|   |   |   |   |   dst_host_rerror_rate < 0.01 : normal (618/0)
+|   |   |   |   |   dst_host_rerror_rate >= 0.01 : anomaly (1/0)
+|   |   |   protocol_type = icmp : normal (241/0)
+|   |   count >= 12.5
+|   |   |   dst_host_diff_srv_rate < 0.24
+|   |   |   |   flag = OTH : normal (0/0)
+|   |   |   |   flag = REJ : anomaly (90/0)
+|   |   |   |   flag = RSTO : anomaly (13/0)
+|   |   |   |   flag = RSTOS0 : anomaly (47/0)
+|   |   |   |   flag = RSTR
+|   |   |   |   |   count < 13.5 : normal (1/0)
+|   |   |   |   |   count >= 13.5 : anomaly (43/0)
+|   |   |   |   flag = S0 : anomaly (1182/0)
+|   |   |   |   flag = S1 : normal (4/0)
+|   |   |   |   flag = S2 : anomaly (1/0)
+|   |   |   |   flag = S3 : normal (0/0)
+|   |   |   |   flag = SF
+|   |   |   |   |   dst_host_count < 254.5 : normal (121/0)
+|   |   |   |   |   dst_host_count >= 254.5
+|   |   |   |   |   |   same_srv_rate < 0.04 : anomaly (18/0)
+|   |   |   |   |   |   same_srv_rate >= 0.04
+|   |   |   |   |   |   |   dst_host_srv_count < 8.5
+|   |   |   |   |   |   |   |   dst_host_srv_count < 1.5
+|   |   |   |   |   |   |   |   |   dst_host_diff_srv_rate < 0.1
+|   |   |   |   |   |   |   |   |   |   protocol_type = tcp : normal (17/0)
+|   |   |   |   |   |   |   |   |   |   protocol_type = udp : anomaly (6/0)
+|   |   |   |   |   |   |   |   |   |   protocol_type = icmp : normal (0/0)
+|   |   |   |   |   |   |   |   |   dst_host_diff_srv_rate >= 0.1 : anomaly (33/0)
+|   |   |   |   |   |   |   |   dst_host_srv_count >= 1.5
+|   |   |   |   |   |   |   |   |   protocol_type = tcp : normal (0/0)
+|   |   |   |   |   |   |   |   |   protocol_type = udp : anomaly (54/0)
+|   |   |   |   |   |   |   |   |   protocol_type = icmp : normal (5/0)
+|   |   |   |   |   |   |   dst_host_srv_count >= 8.5
+|   |   |   |   |   |   |   |   dst_host_diff_srv_rate < 0.09 : normal (33/0)
+|   |   |   |   |   |   |   |   dst_host_diff_srv_rate >= 0.09 : anomaly (16/0)
+|   |   |   |   flag = SH : normal (0/0)
+|   |   |   dst_host_diff_srv_rate >= 0.24
+|   |   |   |   rerror_rate < 0.03
+|   |   |   |   |   duration < 86
+|   |   |   |   |   |   service = aol : normal (0/0)
+|   |   |   |   |   |   service = auth : normal (0/0)
+|   |   |   |   |   |   service = bgp : normal (0/0)
+|   |   |   |   |   |   service = courier : normal (0/0)
+|   |   |   |   |   |   service = csnet_ns : normal (0/0)
+|   |   |   |   |   |   service = ctf : normal (0/0)
+|   |   |   |   |   |   service = daytime : normal (0/0)
+|   |   |   |   |   |   service = discard : normal (0/0)
+|   |   |   |   |   |   service = domain : normal (0/0)
+|   |   |   |   |   |   service = domain_u : anomaly (5/0)
+|   |   |   |   |   |   service = echo : normal (0/0)
+|   |   |   |   |   |   service = eco_i : normal (0/0)
+|   |   |   |   |   |   service = ecr_i : normal (0/0)
+|   |   |   |   |   |   service = efs : normal (0/0)
+|   |   |   |   |   |   service = exec : normal (0/0)
+|   |   |   |   |   |   service = finger : normal (0/0)
+|   |   |   |   |   |   service = ftp : normal (0/0)
+|   |   |   |   |   |   service = ftp_data : normal (1/0)
+|   |   |   |   |   |   service = gopher : normal (0/0)
+|   |   |   |   |   |   service = harvest : normal (0/0)
+|   |   |   |   |   |   service = hostnames : normal (0/0)
+|   |   |   |   |   |   service = http : normal (0/0)
+|   |   |   |   |   |   service = http_2784 : normal (0/0)
+|   |   |   |   |   |   service = http_443 : normal (0/0)
+|   |   |   |   |   |   service = http_8001 : normal (0/0)
+|   |   |   |   |   |   service = imap4 : normal (0/0)
+|   |   |   |   |   |   service = IRC : normal (0/0)
+|   |   |   |   |   |   service = iso_tsap : normal (0/0)
+|   |   |   |   |   |   service = klogin : normal (0/0)
+|   |   |   |   |   |   service = kshell : normal (0/0)
+|   |   |   |   |   |   service = ldap : normal (0/0)
+|   |   |   |   |   |   service = link : normal (0/0)
+|   |   |   |   |   |   service = login : normal (0/0)
+|   |   |   |   |   |   service = mtp : normal (0/0)
+|   |   |   |   |   |   service = name : normal (0/0)
+|   |   |   |   |   |   service = netbios_dgm : normal (0/0)
+|   |   |   |   |   |   service = netbios_ns : normal (0/0)
+|   |   |   |   |   |   service = netbios_ssn : normal (0/0)
+|   |   |   |   |   |   service = netstat : normal (0/0)
+|   |   |   |   |   |   service = nnsp : normal (0/0)
+|   |   |   |   |   |   service = nntp : normal (0/0)
+|   |   |   |   |   |   service = ntp_u : normal (0/0)
+|   |   |   |   |   |   service = other
+|   |   |   |   |   |   |   count < 15.5
+|   |   |   |   |   |   |   |   dst_host_rerror_rate < 0.07
+|   |   |   |   |   |   |   |   |   protocol_type = tcp : normal (1/0)
+|   |   |   |   |   |   |   |   |   protocol_type = udp
+|   |   |   |   |   |   |   |   |   |   src_bytes < 73.5 : anomaly (2/0)
+|   |   |   |   |   |   |   |   |   |   src_bytes >= 73.5 : normal (2/0)
+|   |   |   |   |   |   |   |   |   protocol_type = icmp : normal (0/0)
+|   |   |   |   |   |   |   |   dst_host_rerror_rate >= 0.07 : anomaly (8/0)
+|   |   |   |   |   |   |   count >= 15.5 : anomaly (15/0)
+|   |   |   |   |   |   service = pm_dump : normal (0/0)
+|   |   |   |   |   |   service = pop_2 : normal (0/0)
+|   |   |   |   |   |   service = pop_3 : normal (0/0)
+|   |   |   |   |   |   service = printer : normal (0/0)
+|   |   |   |   |   |   service = private : anomaly (206/0)
+|   |   |   |   |   |   service = red_i : normal (0/0)
+|   |   |   |   |   |   service = remote_job : normal (0/0)
+|   |   |   |   |   |   service = rje : normal (0/0)
+|   |   |   |   |   |   service = shell : normal (0/0)
+|   |   |   |   |   |   service = smtp : normal (0/0)
+|   |   |   |   |   |   service = sql_net : normal (0/0)
+|   |   |   |   |   |   service = ssh : normal (0/0)
+|   |   |   |   |   |   service = sunrpc : normal (0/0)
+|   |   |   |   |   |   service = supdup : normal (0/0)
+|   |   |   |   |   |   service = systat : normal (0/0)
+|   |   |   |   |   |   service = telnet : normal (0/0)
+|   |   |   |   |   |   service = tftp_u : normal (0/0)
+|   |   |   |   |   |   service = tim_i : normal (0/0)
+|   |   |   |   |   |   service = time : normal (0/0)
+|   |   |   |   |   |   service = urh_i : normal (0/0)
+|   |   |   |   |   |   service = urp_i : normal (0/0)
+|   |   |   |   |   |   service = uucp : normal (0/0)
+|   |   |   |   |   |   service = uucp_path : normal (0/0)
+|   |   |   |   |   |   service = vmnet : normal (0/0)
+|   |   |   |   |   |   service = whois : normal (0/0)
+|   |   |   |   |   |   service = X11 : normal (0/0)
+|   |   |   |   |   |   service = Z39_50 : normal (0/0)
+|   |   |   |   |   duration >= 86 : normal (3/0)
+|   |   |   |   rerror_rate >= 0.03 : anomaly (2307/0)
+same_srv_rate >= 0.49
+|   service = aol : normal (0/0)
+|   service = auth
+|   |   srv_rerror_rate < 0.75
+|   |   |   srv_serror_rate < 0.97
+|   |   |   |   dst_host_count < 7.5
+|   |   |   |   |   diff_srv_rate < 0.5
+|   |   |   |   |   |   num_root < 0.5 : normal (16/0)
+|   |   |   |   |   |   num_root >= 0.5 : anomaly (2/0)
+|   |   |   |   |   diff_srv_rate >= 0.5
+|   |   |   |   |   |   dst_host_srv_count < 2.5 : anomaly (2/0)
+|   |   |   |   |   |   dst_host_srv_count >= 2.5 : normal (5/0)
+|   |   |   |   dst_host_count >= 7.5 : normal (182/0)
+|   |   |   srv_serror_rate >= 0.97 : anomaly (2/0)
+|   |   srv_rerror_rate >= 0.75
+|   |   |   srv_count < 1.5
+|   |   |   |   dst_host_same_srv_rate < 0.01
+|   |   |   |   |   dst_host_serror_rate < 0.35 : anomaly (5/0)
+|   |   |   |   |   dst_host_serror_rate >= 0.35 : normal (1/0)
+|   |   |   |   dst_host_same_srv_rate >= 0.01
+|   |   |   |   |   dst_host_same_src_port_rate < 0.36 : normal (18/0)
+|   |   |   |   |   dst_host_same_src_port_rate >= 0.36 : anomaly (1/0)
+|   |   |   srv_count >= 1.5 : anomaly (1/0)
+|   service = bgp : anomaly (8/0)
+|   service = courier : anomaly (11/0)
+|   service = csnet_ns : anomaly (7/0)
+|   service = ctf : anomaly (16/0)
+|   service = daytime : anomaly (10/0)
+|   service = discard : anomaly (10/0)
+|   service = domain
+|   |   serror_rate < 0.5
+|   |   |   dst_host_count < 39.5 : anomaly (9/0)
+|   |   |   dst_host_count >= 39.5
+|   |   |   |   src_bytes < 16.5 : anomaly (7/0)
+|   |   |   |   src_bytes >= 16.5 : normal (1/0)
+|   |   serror_rate >= 0.5
+|   |   |   dst_host_diff_srv_rate < 0.51 : normal (1/0)
+|   |   |   dst_host_diff_srv_rate >= 0.51 : anomaly (1/0)
+|   service = domain_u : normal (8963/0)
+|   service = echo : anomaly (12/0)
+|   service = eco_i
+|   |   rerror_rate < 0.25
+|   |   |   dst_host_count < 4.5
+|   |   |   |   src_bytes < 24 : anomaly (4052/0)
+|   |   |   |   src_bytes >= 24 : normal (13/0)
+|   |   |   dst_host_count >= 4.5
+|   |   |   |   srv_count < 9.5
+|   |   |   |   |   dst_host_rerror_rate < 0.01
+|   |   |   |   |   |   src_bytes < 25 : anomaly (15/0)
+|   |   |   |   |   |   src_bytes >= 25 : normal (361/0)
+|   |   |   |   |   dst_host_rerror_rate >= 0.01
+|   |   |   |   |   |   src_bytes < 42 : anomaly (14/0)
+|   |   |   |   |   |   src_bytes >= 42 : normal (1/0)
+|   |   |   |   srv_count >= 9.5
+|   |   |   |   |   srv_count < 48 : anomaly (3/0)
+|   |   |   |   |   srv_count >= 48 : normal (1/0)
+|   |   rerror_rate >= 0.25 : anomaly (1/0)
+|   service = ecr_i
+|   |   count < 8.5
+|   |   |   dst_host_srv_diff_host_rate < 0.01
+|   |   |   |   dst_host_same_src_port_rate < 0.94
+|   |   |   |   |   dst_host_srv_count < 2.5
+|   |   |   |   |   |   dst_host_same_src_port_rate < 0.29
+|   |   |   |   |   |   |   dst_host_diff_srv_rate < 0.03
+|   |   |   |   |   |   |   |   src_bytes < 548
+|   |   |   |   |   |   |   |   |   src_bytes < 42 : anomaly (1/0)
+|   |   |   |   |   |   |   |   |   src_bytes >= 42 : normal (6/0)
+|   |   |   |   |   |   |   |   src_bytes >= 548 : anomaly (5/0)
+|   |   |   |   |   |   |   dst_host_diff_srv_rate >= 0.03
+|   |   |   |   |   |   |   |   dst_host_rerror_rate < 0.01
+|   |   |   |   |   |   |   |   |   dst_host_count < 84.5 : normal (15/0)
+|   |   |   |   |   |   |   |   |   dst_host_count >= 84.5
+|   |   |   |   |   |   |   |   |   |   src_bytes < 548
+|   |   |   |   |   |   |   |   |   |   |   dst_host_same_srv_rate < 0.01 : normal (2/0)
+|   |   |   |   |   |   |   |   |   |   |   dst_host_same_srv_rate >= 0.01
+|   |   |   |   |   |   |   |   |   |   |   |   dst_host_count < 169 : normal (6/0)
+|   |   |   |   |   |   |   |   |   |   |   |   dst_host_count >= 169
+|   |   |   |   |   |   |   |   |   |   |   |   |   dst_host_srv_count < 1.5 : anomaly (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   dst_host_srv_count >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   src_bytes < 42 : anomaly (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   src_bytes >= 42 : normal (1/0)
+|   |   |   |   |   |   |   |   |   |   src_bytes >= 548 : anomaly (5/0)
+|   |   |   |   |   |   |   |   dst_host_rerror_rate >= 0.01 : normal (5/0)
+|   |   |   |   |   |   dst_host_same_src_port_rate >= 0.29 : anomaly (2/0)
+|   |   |   |   |   dst_host_srv_count >= 2.5
+|   |   |   |   |   |   dst_host_serror_rate < 0.01
+|   |   |   |   |   |   |   dst_host_same_srv_rate < 0.08
+|   |   |   |   |   |   |   |   count < 3.5
+|   |   |   |   |   |   |   |   |   dst_host_count < 65 : normal (1/0)
+|   |   |   |   |   |   |   |   |   dst_host_count >= 65
+|   |   |   |   |   |   |   |   |   |   wrong_fragment < 0.5
+|   |   |   |   |   |   |   |   |   |   |   dst_host_srv_count < 3.5
+|   |   |   |   |   |   |   |   |   |   |   |   src_bytes < 548 : normal (2/0)
+|   |   |   |   |   |   |   |   |   |   |   |   src_bytes >= 548 : anomaly (1/0)
+|   |   |   |   |   |   |   |   |   |   |   dst_host_srv_count >= 3.5 : normal (2/0)
+|   |   |   |   |   |   |   |   |   |   wrong_fragment >= 0.5 : anomaly (5/0)
+|   |   |   |   |   |   |   |   count >= 3.5
+|   |   |   |   |   |   |   |   |   src_bytes < 548 : normal (5/0)
+|   |   |   |   |   |   |   |   |   src_bytes >= 548 : anomaly (17/0)
+|   |   |   |   |   |   |   dst_host_same_srv_rate >= 0.08 : anomaly (7/0)
+|   |   |   |   |   |   dst_host_serror_rate >= 0.01 : anomaly (10/0)
+|   |   |   |   dst_host_same_src_port_rate >= 0.94
+|   |   |   |   |   count < 2.5
+|   |   |   |   |   |   count < 1.5
+|   |   |   |   |   |   |   dst_host_count < 17
+|   |   |   |   |   |   |   |   dst_host_same_srv_rate < 0.63 : anomaly (1/0)
+|   |   |   |   |   |   |   |   dst_host_same_srv_rate >= 0.63
+|   |   |   |   |   |   |   |   |   dst_host_srv_count < 6.5
+|   |   |   |   |   |   |   |   |   |   wrong_fragment < 0.5
+|   |   |   |   |   |   |   |   |   |   |   dst_host_count < 5.5
+|   |   |   |   |   |   |   |   |   |   |   |   src_bytes < 19 : anomaly (14/0)
+|   |   |   |   |   |   |   |   |   |   |   |   src_bytes >= 19
+|   |   |   |   |   |   |   |   |   |   |   |   |   src_bytes < 270 : normal (2/1)
+|   |   |   |   |   |   |   |   |   |   |   |   |   src_bytes >= 270 : anomaly (1/0)
+|   |   |   |   |   |   |   |   |   |   |   dst_host_count >= 5.5
+|   |   |   |   |   |   |   |   |   |   |   |   src_bytes < 24 : anomaly (2/0)
+|   |   |   |   |   |   |   |   |   |   |   |   src_bytes >= 24 : normal (1/0)
+|   |   |   |   |   |   |   |   |   |   wrong_fragment >= 0.5 : anomaly (1/0)
+|   |   |   |   |   |   |   |   |   dst_host_srv_count >= 6.5 : anomaly (10/0)
+|   |   |   |   |   |   |   dst_host_count >= 17
+|   |   |   |   |   |   |   |   srv_count < 255.5
+|   |   |   |   |   |   |   |   |   src_bytes < 531 : normal (47/0)
+|   |   |   |   |   |   |   |   |   src_bytes >= 531 : anomaly (1/0)
+|   |   |   |   |   |   |   |   srv_count >= 255.5 : normal (4/0)
+|   |   |   |   |   |   count >= 1.5
+|   |   |   |   |   |   |   wrong_fragment < 0.5
+|   |   |   |   |   |   |   |   dst_host_count < 16 : anomaly (5/0)
+|   |   |   |   |   |   |   |   dst_host_count >= 16
+|   |   |   |   |   |   |   |   |   dst_host_srv_count < 250.5 : normal (75/0)
+|   |   |   |   |   |   |   |   |   dst_host_srv_count >= 250.5
+|   |   |   |   |   |   |   |   |   |   src_bytes < 275 : normal (1/0)
+|   |   |   |   |   |   |   |   |   |   src_bytes >= 275 : anomaly (2/0)
+|   |   |   |   |   |   |   wrong_fragment >= 0.5 : anomaly (1/0)
+|   |   |   |   |   count >= 2.5 : anomaly (17/0)
+|   |   |   dst_host_srv_diff_host_rate >= 0.01
+|   |   |   |   count < 1.5
+|   |   |   |   |   dst_host_count < 4.5
+|   |   |   |   |   |   src_bytes < 755 : normal (4/0)
+|   |   |   |   |   |   src_bytes >= 755 : anomaly (59/0)
+|   |   |   |   |   dst_host_count >= 4.5 : normal (11/0)
+|   |   |   |   count >= 1.5 : anomaly (57/0)
+|   |   count >= 8.5 : anomaly (2660/0)
+|   service = efs : anomaly (20/0)
+|   service = exec : anomaly (12/0)
+|   service = finger
+|   |   flag = OTH : normal (0/0)
+|   |   flag = REJ : normal (0/0)
+|   |   flag = RSTO
+|   |   |   same_srv_rate < 0.75 : anomaly (2/0)
+|   |   |   same_srv_rate >= 0.75 : normal (7/0)
+|   |   flag = RSTOS0 : anomaly (1/0)
+|   |   flag = RSTR
+|   |   |   dst_host_count < 91.5 : normal (2/0)
+|   |   |   dst_host_count >= 91.5 : anomaly (5/0)
+|   |   flag = S0
+|   |   |   dst_host_srv_diff_host_rate < 0.11
+|   |   |   |   dst_host_same_srv_rate < 0.65 : anomaly (91/0)
+|   |   |   |   dst_host_same_srv_rate >= 0.65 : normal (2/1)
+|   |   |   dst_host_srv_diff_host_rate >= 0.11
+|   |   |   |   dst_host_srv_diff_host_rate < 0.16
+|   |   |   |   |   count < 4.5 : normal (1/0)
+|   |   |   |   |   count >= 4.5 : anomaly (5/0)
+|   |   |   |   dst_host_srv_diff_host_rate >= 0.16
+|   |   |   |   |   dst_host_count < 116
+|   |   |   |   |   |   dst_host_same_src_port_rate < 0.04 : anomaly (5/0)
+|   |   |   |   |   |   dst_host_same_src_port_rate >= 0.04
+|   |   |   |   |   |   |   dst_host_same_src_port_rate < 0.06 : normal (1/0)
+|   |   |   |   |   |   |   dst_host_same_src_port_rate >= 0.06
+|   |   |   |   |   |   |   |   srv_diff_host_rate < 0.5
+|   |   |   |   |   |   |   |   |   dst_host_srv_count < 7
+|   |   |   |   |   |   |   |   |   |   dst_host_srv_diff_host_rate < 0.42 : anomaly (1/0)
+|   |   |   |   |   |   |   |   |   |   dst_host_srv_diff_host_rate >= 0.42 : normal (1/0)
+|   |   |   |   |   |   |   |   |   dst_host_srv_count >= 7 : anomaly (2/0)
+|   |   |   |   |   |   |   |   srv_diff_host_rate >= 0.5
+|   |   |   |   |   |   |   |   |   dst_host_same_srv_rate < 0.54 : anomaly (1/0)
+|   |   |   |   |   |   |   |   |   dst_host_same_srv_rate >= 0.54
+|   |   |   |   |   |   |   |   |   |   dst_host_srv_serror_rate < 0.92
+|   |   |   |   |   |   |   |   |   |   |   dst_host_srv_diff_host_rate < 0.3 : normal (1/0)
+|   |   |   |   |   |   |   |   |   |   |   dst_host_srv_diff_host_rate >= 0.3 : anomaly (6/0)
+|   |   |   |   |   |   |   |   |   |   dst_host_srv_serror_rate >= 0.92
+|   |   |   |   |   |   |   |   |   |   |   dst_host_srv_count < 3.5 : normal (4/2)
+|   |   |   |   |   |   |   |   |   |   |   dst_host_srv_count >= 3.5
+|   |   |   |   |   |   |   |   |   |   |   |   dst_host_srv_count < 4.5 : normal (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   dst_host_srv_count >= 4.5 : normal (2/1)
+|   |   |   |   |   dst_host_count >= 116 : normal (2/0)
+|   |   flag = S1 : normal (3/0)
+|   |   flag = S2 : normal (0/0)
+|   |   flag = S3 : normal (1/0)
+|   |   flag = SF
+|   |   |   dst_host_count < 59.5 : normal (153/0)
+|   |   |   dst_host_count >= 59.5
+|   |   |   |   srv_count < 2.5
+|   |   |   |   |   dst_host_diff_srv_rate < 0.98
+|   |   |   |   |   |   dst_host_count < 254.5 : normal (279/0)
+|   |   |   |   |   |   dst_host_count >= 254.5
+|   |   |   |   |   |   |   count < 2.5
+|   |   |   |   |   |   |   |   src_bytes < 5.5 : anomaly (2/0)
+|   |   |   |   |   |   |   |   src_bytes >= 5.5 : normal (77/0)
+|   |   |   |   |   |   |   count >= 2.5 : anomaly (2/0)
+|   |   |   |   |   dst_host_diff_srv_rate >= 0.98 : anomaly (13/0)
+|   |   |   |   srv_count >= 2.5
+|   |   |   |   |   hot < 0.5
+|   |   |   |   |   |   duration < 0.5
+|   |   |   |   |   |   |   srv_diff_host_rate < 0.38 : anomaly (1/0)
+|   |   |   |   |   |   |   srv_diff_host_rate >= 0.38 : normal (1/0)
+|   |   |   |   |   |   duration >= 0.5 : anomaly (10/0)
+|   |   |   |   |   hot >= 0.5 : anomaly (4/0)
+|   |   flag = SH : anomaly (1/0)
+|   service = ftp
+|   |   dst_host_srv_count < 71.5
+|   |   |   duration < 7.5
+|   |   |   |   is_guest_login = 0
+|   |   |   |   |   dst_host_srv_count < 4 : anomaly (19/0)
+|   |   |   |   |   dst_host_srv_count >= 4
+|   |   |   |   |   |   rerror_rate < 0.5 : normal (28/0)
+|   |   |   |   |   |   rerror_rate >= 0.5
+|   |   |   |   |   |   |   dst_host_count < 17 : anomaly (2/0)
+|   |   |   |   |   |   |   dst_host_count >= 17 : normal (12/0)
+|   |   |   |   is_guest_login = 1
+|   |   |   |   |   hot < 26
+|   |   |   |   |   |   dst_host_serror_rate < 0.07
+|   |   |   |   |   |   |   num_failed_logins < 2 : normal (12/0)
+|   |   |   |   |   |   |   num_failed_logins >= 2 : anomaly (1/0)
+|   |   |   |   |   |   dst_host_serror_rate >= 0.07 : anomaly (2/0)
+|   |   |   |   |   hot >= 26 : anomaly (138/0)
+|   |   |   duration >= 7.5
+|   |   |   |   dst_host_diff_srv_rate < 0.03
+|   |   |   |   |   dst_host_srv_count < 26.5
+|   |   |   |   |   |   duration < 166.5
+|   |   |   |   |   |   |   num_failed_logins < 0.5
+|   |   |   |   |   |   |   |   duration < 31.5
+|   |   |   |   |   |   |   |   |   num_access_files < 0.5
+|   |   |   |   |   |   |   |   |   |   src_bytes < 153.5 : anomaly (1/0)
+|   |   |   |   |   |   |   |   |   |   src_bytes >= 153.5 : normal (40/0)
+|   |   |   |   |   |   |   |   |   num_access_files >= 0.5 : anomaly (1/0)
+|   |   |   |   |   |   |   |   duration >= 31.5
+|   |   |   |   |   |   |   |   |   num_access_files < 0.5 : normal (3/0)
+|   |   |   |   |   |   |   |   |   num_access_files >= 0.5 : anomaly (1/0)
+|   |   |   |   |   |   |   num_failed_logins >= 0.5 : normal (1/0)
+|   |   |   |   |   |   duration >= 166.5 : anomaly (28/0)
+|   |   |   |   |   dst_host_srv_count >= 26.5 : normal (204/0)
+|   |   |   |   dst_host_diff_srv_rate >= 0.03
+|   |   |   |   |   srv_rerror_rate < 0.5
+|   |   |   |   |   |   num_file_creations < 12.5 : normal (605/0)
+|   |   |   |   |   |   num_file_creations >= 12.5 : anomaly (1/0)
+|   |   |   |   |   srv_rerror_rate >= 0.5
+|   |   |   |   |   |   dst_bytes < 251 : anomaly (2/0)
+|   |   |   |   |   |   dst_bytes >= 251 : normal (1/0)
+|   |   dst_host_srv_count >= 71.5
+|   |   |   dst_host_srv_count < 79.5
+|   |   |   |   hot < 29
+|   |   |   |   |   dst_host_diff_srv_rate < 0.03 : anomaly (16/0)
+|   |   |   |   |   dst_host_diff_srv_rate >= 0.03 : normal (2/0)
+|   |   |   |   hot >= 29 : normal (2/0)
+|   |   |   dst_host_srv_count >= 79.5 : anomaly (125/0)
+|   service = ftp_data
+|   |   dst_host_same_srv_rate < 0.98
+|   |   |   srv_serror_rate < 0.97
+|   |   |   |   srv_count < 2.5
+|   |   |   |   |   srv_rerror_rate < 0.5
+|   |   |   |   |   |   logged_in = 0 : normal (979/0)
+|   |   |   |   |   |   logged_in = 1
+|   |   |   |   |   |   |   src_bytes < 245.5
+|   |   |   |   |   |   |   |   dst_host_same_srv_rate < 0.85 : normal (695/0)
+|   |   |   |   |   |   |   |   dst_host_same_srv_rate >= 0.85
+|   |   |   |   |   |   |   |   |   dst_host_count < 10.5
+|   |   |   |   |   |   |   |   |   |   dst_host_diff_srv_rate < 0.21
+|   |   |   |   |   |   |   |   |   |   |   dst_host_srv_serror_rate < 0.01 : normal (1/0)
+|   |   |   |   |   |   |   |   |   |   |   dst_host_srv_serror_rate >= 0.01 : anomaly (1/0)
+|   |   |   |   |   |   |   |   |   |   dst_host_diff_srv_rate >= 0.21
+|   |   |   |   |   |   |   |   |   |   |   dst_host_same_src_port_rate < 0.95 : normal (8/0)
+|   |   |   |   |   |   |   |   |   |   |   dst_host_same_src_port_rate >= 0.95 : anomaly (1/0)
+|   |   |   |   |   |   |   |   |   dst_host_count >= 10.5 : normal (11/0)
+|   |   |   |   |   |   |   src_bytes >= 245.5
+|   |   |   |   |   |   |   |   duration < 11
+|   |   |   |   |   |   |   |   |   src_bytes < 353.5
+|   |   |   |   |   |   |   |   |   |   num_root < 0.5
+|   |   |   |   |   |   |   |   |   |   |   src_bytes < 305
+|   |   |   |   |   |   |   |   |   |   |   |   same_srv_rate < 0.75
+|   |   |   |   |   |   |   |   |   |   |   |   |   src_bytes < 249 : anomaly (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   src_bytes >= 249 : normal (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   same_srv_rate >= 0.75
+|   |   |   |   |   |   |   |   |   |   |   |   |   dst_host_diff_srv_rate < 0.08 : normal (25/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   dst_host_diff_srv_rate >= 0.08
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   dst_host_srv_serror_rate < 0.01
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   dst_host_same_srv_rate < 0.83 : normal (13/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   dst_host_same_srv_rate >= 0.83 : anomaly (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   dst_host_srv_serror_rate >= 0.01
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   dst_host_srv_diff_host_rate < 0.01 : anomaly (2/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   dst_host_srv_diff_host_rate >= 0.01 : normal (1/0)
+|   |   |   |   |   |   |   |   |   |   |   src_bytes >= 305 : anomaly (54/0)
+|   |   |   |   |   |   |   |   |   |   num_root >= 0.5 : normal (45/0)
+|   |   |   |   |   |   |   |   |   src_bytes >= 353.5
+|   |   |   |   |   |   |   |   |   |   dst_host_srv_serror_rate < 0.01
+|   |   |   |   |   |   |   |   |   |   |   dst_host_diff_srv_rate < 0.2 : normal (768/0)
+|   |   |   |   |   |   |   |   |   |   |   dst_host_diff_srv_rate >= 0.2
+|   |   |   |   |   |   |   |   |   |   |   |   diff_srv_rate < 0.25
+|   |   |   |   |   |   |   |   |   |   |   |   |   duration < 3 : normal (105/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   duration >= 3
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   dst_host_srv_diff_host_rate < 0.07 : normal (2/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   dst_host_srv_diff_host_rate >= 0.07 : anomaly (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   diff_srv_rate >= 0.25 : normal (6/0)
+|   |   |   |   |   |   |   |   |   |   dst_host_srv_serror_rate >= 0.01
+|   |   |   |   |   |   |   |   |   |   |   count < 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   dst_host_srv_diff_host_rate < 0.01
+|   |   |   |   |   |   |   |   |   |   |   |   |   duration < 2 : normal (27/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   duration >= 2 : anomaly (2/0)
+|   |   |   |   |   |   |   |   |   |   |   |   dst_host_srv_diff_host_rate >= 0.01 : normal (51/0)
+|   |   |   |   |   |   |   |   |   |   |   count >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   diff_srv_rate < 0.83 : normal (87/0)
+|   |   |   |   |   |   |   |   |   |   |   |   diff_srv_rate >= 0.83
+|   |   |   |   |   |   |   |   |   |   |   |   |   dst_host_same_src_port_rate < 0.32 : normal (2/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   dst_host_same_src_port_rate >= 0.32
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   dst_host_srv_count < 91.5 : anomaly (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   dst_host_srv_count >= 91.5 : normal (2/0)
+|   |   |   |   |   |   |   |   duration >= 11
+|   |   |   |   |   |   |   |   |   hot < 1
+|   |   |   |   |   |   |   |   |   |   dst_host_serror_rate < 0.01
+|   |   |   |   |   |   |   |   |   |   |   dst_host_count < 106 : anomaly (1/0)
+|   |   |   |   |   |   |   |   |   |   |   dst_host_count >= 106 : normal (2/0)
+|   |   |   |   |   |   |   |   |   |   dst_host_serror_rate >= 0.01 : anomaly (3/0)
+|   |   |   |   |   |   |   |   |   hot >= 1 : anomaly (6/0)
+|   |   |   |   |   srv_rerror_rate >= 0.5 : anomaly (10/0)
+|   |   |   |   srv_count >= 2.5 : normal (1867/0)
+|   |   |   srv_serror_rate >= 0.97
+|   |   |   |   src_bytes < 284 : anomaly (77/0)
+|   |   |   |   src_bytes >= 284 : normal (7/0)
+|   |   dst_host_same_srv_rate >= 0.98
+|   |   |   dst_host_srv_diff_host_rate < 0.1
+|   |   |   |   dst_host_srv_diff_host_rate < 0.04
+|   |   |   |   |   srv_rerror_rate < 0.5
+|   |   |   |   |   |   dst_host_count < 18.5
+|   |   |   |   |   |   |   dst_host_srv_diff_host_rate < 0.01
+|   |   |   |   |   |   |   |   root_shell < 0.5
+|   |   |   |   |   |   |   |   |   srv_count < 3.5
+|   |   |   |   |   |   |   |   |   |   dst_bytes < 424
+|   |   |   |   |   |   |   |   |   |   |   hot < 2.5
+|   |   |   |   |   |   |   |   |   |   |   |   duration < 8.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   dst_host_count < 9.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   srv_count < 2.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   logged_in = 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   duration < 2.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   src_bytes < 803 : normal (2/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   src_bytes >= 803 : anomaly (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   duration >= 2.5 : normal (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   logged_in = 1
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   num_root < 0.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   src_bytes < 358.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   dst_host_count < 7.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   count < 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   dst_host_srv_count < 6.5 : anomaly (6/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   dst_host_srv_count >= 6.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   src_bytes < 267.5 : normal (2/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   src_bytes >= 267.5 : anomaly (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   count >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   dst_host_count < 1.5 : normal (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   dst_host_count >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   dst_host_count < 4.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   dst_host_count < 3.5 : anomaly (2/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   dst_host_count >= 3.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   src_bytes < 263 : normal (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   src_bytes >= 263 : anomaly (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   dst_host_count >= 4.5 : anomaly (3/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   dst_host_count >= 7.5 : anomaly (3/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   src_bytes >= 358.5 : normal (14/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   num_root >= 0.5 : normal (7/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   srv_count >= 2.5 : normal (3/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   dst_host_count >= 9.5 : anomaly (4/0)
+|   |   |   |   |   |   |   |   |   |   |   |   duration >= 8.5 : anomaly (2/0)
+|   |   |   |   |   |   |   |   |   |   |   hot >= 2.5 : anomaly (1/0)
+|   |   |   |   |   |   |   |   |   |   dst_bytes >= 424 : anomaly (23/0)
+|   |   |   |   |   |   |   |   |   srv_count >= 3.5 : normal (26/0)
+|   |   |   |   |   |   |   |   root_shell >= 0.5 : anomaly (1/0)
+|   |   |   |   |   |   |   dst_host_srv_diff_host_rate >= 0.01
+|   |   |   |   |   |   |   |   srv_diff_host_rate < 0.83
+|   |   |   |   |   |   |   |   |   duration < 3
+|   |   |   |   |   |   |   |   |   |   dst_host_count < 7.5
+|   |   |   |   |   |   |   |   |   |   |   dst_host_srv_serror_rate < 0.01
+|   |   |   |   |   |   |   |   |   |   |   |   root_shell < 0.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   dst_host_count < 3.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   num_root < 0.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   dst_host_srv_diff_host_rate < 0.03
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   dst_host_srv_count < 86.5 : anomaly (4/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   dst_host_srv_count >= 86.5 : normal (8/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   dst_host_srv_diff_host_rate >= 0.03 : normal (21/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   num_root >= 0.5 : normal (15/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   dst_host_count >= 3.5 : normal (34/0)
+|   |   |   |   |   |   |   |   |   |   |   |   root_shell >= 0.5 : anomaly (1/0)
+|   |   |   |   |   |   |   |   |   |   |   dst_host_srv_serror_rate >= 0.01
+|   |   |   |   |   |   |   |   |   |   |   |   num_root < 3
+|   |   |   |   |   |   |   |   |   |   |   |   |   dst_host_count < 2 : anomaly (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   dst_host_count >= 2
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   count < 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   dst_host_srv_count < 47 : anomaly (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   dst_host_srv_count >= 47 : normal (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   count >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   src_bytes < 264 : normal (2/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   src_bytes >= 264
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   dst_host_count < 5 : normal (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   dst_host_count >= 5 : anomaly (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   num_root >= 3 : normal (1/0)
+|   |   |   |   |   |   |   |   |   |   dst_host_count >= 7.5 : normal (39/0)
+|   |   |   |   |   |   |   |   |   duration >= 3 : anomaly (4/0)
+|   |   |   |   |   |   |   |   srv_diff_host_rate >= 0.83
+|   |   |   |   |   |   |   |   |   dst_host_count < 2 : anomaly (1/0)
+|   |   |   |   |   |   |   |   |   dst_host_count >= 2 : normal (4/0)
+|   |   |   |   |   |   dst_host_count >= 18.5 : normal (22/0)
+|   |   |   |   |   srv_rerror_rate >= 0.5 : anomaly (8/0)
+|   |   |   |   dst_host_srv_diff_host_rate >= 0.04
+|   |   |   |   |   src_bytes < 245.5
+|   |   |   |   |   |   rerror_rate < 0.5
+|   |   |   |   |   |   |   dst_host_srv_diff_host_rate < 0.08
+|   |   |   |   |   |   |   |   count < 1.5
+|   |   |   |   |   |   |   |   |   dst_host_count < 4.5 : normal (4/0)
+|   |   |   |   |   |   |   |   |   dst_host_count >= 4.5 : anomaly (1/0)
+|   |   |   |   |   |   |   |   count >= 1.5 : normal (2/0)
+|   |   |   |   |   |   |   dst_host_srv_diff_host_rate >= 0.08 : normal (5/0)
+|   |   |   |   |   |   rerror_rate >= 0.5 : anomaly (2/0)
+|   |   |   |   |   src_bytes >= 245.5
+|   |   |   |   |   |   src_bytes < 353.5
+|   |   |   |   |   |   |   count < 1.5 : anomaly (21/0)
+|   |   |   |   |   |   |   count >= 1.5
+|   |   |   |   |   |   |   |   dst_host_srv_count < 27.5
+|   |   |   |   |   |   |   |   |   dst_host_srv_diff_host_rate < 0.08
+|   |   |   |   |   |   |   |   |   |   src_bytes < 293 : normal (1/0)
+|   |   |   |   |   |   |   |   |   |   src_bytes >= 293 : anomaly (1/0)
+|   |   |   |   |   |   |   |   |   dst_host_srv_diff_host_rate >= 0.08 : anomaly (4/0)
+|   |   |   |   |   |   |   |   dst_host_srv_count >= 27.5 : anomaly (16/0)
+|   |   |   |   |   |   src_bytes >= 353.5
+|   |   |   |   |   |   |   dst_host_rerror_rate < 0.07
+|   |   |   |   |   |   |   |   num_access_files < 0.5
+|   |   |   |   |   |   |   |   |   src_bytes < 3663021.5
+|   |   |   |   |   |   |   |   |   |   count < 2.5
+|   |   |   |   |   |   |   |   |   |   |   dst_host_srv_diff_host_rate < 0.08
+|   |   |   |   |   |   |   |   |   |   |   |   dst_host_srv_count < 37.5 : normal (9/0)
+|   |   |   |   |   |   |   |   |   |   |   |   dst_host_srv_count >= 37.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   dst_host_srv_diff_host_rate < 0.06 : normal (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   dst_host_srv_diff_host_rate >= 0.06 : anomaly (4/0)
+|   |   |   |   |   |   |   |   |   |   |   dst_host_srv_diff_host_rate >= 0.08 : normal (4/0)
+|   |   |   |   |   |   |   |   |   |   count >= 2.5 : normal (4/0)
+|   |   |   |   |   |   |   |   |   src_bytes >= 3663021.5 : anomaly (5/0)
+|   |   |   |   |   |   |   |   num_access_files >= 0.5 : normal (1/0)
+|   |   |   |   |   |   |   dst_host_rerror_rate >= 0.07 : anomaly (4/0)
+|   |   |   dst_host_srv_diff_host_rate >= 0.1
+|   |   |   |   dst_host_srv_count < 31.5
+|   |   |   |   |   dst_host_srv_count < 29.5
+|   |   |   |   |   |   num_root < 3 : anomaly (225/0)
+|   |   |   |   |   |   num_root >= 3 : normal (1/0)
+|   |   |   |   |   dst_host_srv_count >= 29.5
+|   |   |   |   |   |   dst_host_count < 2.5
+|   |   |   |   |   |   |   srv_count < 1.5
+|   |   |   |   |   |   |   |   num_root < 2.5 : anomaly (3/0)
+|   |   |   |   |   |   |   |   num_root >= 2.5 : normal (1/0)
+|   |   |   |   |   |   |   srv_count >= 1.5
+|   |   |   |   |   |   |   |   num_root < 0.5 : anomaly (1/0)
+|   |   |   |   |   |   |   |   num_root >= 0.5 : normal (1/0)
+|   |   |   |   |   |   dst_host_count >= 2.5 : anomaly (15/0)
+|   |   |   |   dst_host_srv_count >= 31.5 : anomaly (183/0)
+|   service = gopher : anomaly (19/0)
+|   service = harvest : normal (0/0)
+|   service = hostnames : anomaly (8/0)
+|   service = http
+|   |   num_compromised < 0.5
+|   |   |   flag = OTH : normal (4/0)
+|   |   |   flag = REJ
+|   |   |   |   count < 1.5
+|   |   |   |   |   srv_diff_host_rate < 0.36
+|   |   |   |   |   |   dst_host_rerror_rate < 0.97
+|   |   |   |   |   |   |   srv_serror_rate < 0.47
+|   |   |   |   |   |   |   |   srv_diff_host_rate < 0.31
+|   |   |   |   |   |   |   |   |   dst_host_srv_count < 2.5
+|   |   |   |   |   |   |   |   |   |   dst_host_diff_srv_rate < 0.88 : normal (7/0)
+|   |   |   |   |   |   |   |   |   |   dst_host_diff_srv_rate >= 0.88
+|   |   |   |   |   |   |   |   |   |   |   dst_host_srv_diff_host_rate < 0.5
+|   |   |   |   |   |   |   |   |   |   |   |   dst_host_same_srv_rate < 0.26 : anomaly (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   dst_host_same_srv_rate >= 0.26 : normal (1/0)
+|   |   |   |   |   |   |   |   |   |   |   dst_host_srv_diff_host_rate >= 0.5 : anomaly (4/0)
+|   |   |   |   |   |   |   |   |   dst_host_srv_count >= 2.5 : normal (328/0)
+|   |   |   |   |   |   |   |   srv_diff_host_rate >= 0.31 : anomaly (1/0)
+|   |   |   |   |   |   |   srv_serror_rate >= 0.47 : normal (2/0)
+|   |   |   |   |   |   dst_host_rerror_rate >= 0.97 : normal (1392/0)
+|   |   |   |   |   srv_diff_host_rate >= 0.36 : normal (624/0)
+|   |   |   |   count >= 1.5
+|   |   |   |   |   dst_host_same_srv_rate < 0.41 : anomaly (2/0)
+|   |   |   |   |   dst_host_same_srv_rate >= 0.41 : normal (249/0)
+|   |   |   flag = RSTO : normal (81/0)
+|   |   |   flag = RSTOS0 : normal (0/0)
+|   |   |   flag = RSTR
+|   |   |   |   src_bytes < 6705.5
+|   |   |   |   |   dst_host_same_src_port_rate < 0.18 : normal (3/0)
+|   |   |   |   |   dst_host_same_src_port_rate >= 0.18 : anomaly (6/0)
+|   |   |   |   src_bytes >= 6705.5 : anomaly (61/0)
+|   |   |   flag = S0
+|   |   |   |   srv_serror_rate < 0.58
+|   |   |   |   |   dst_host_same_srv_rate < 0.63 : anomaly (2/0)
+|   |   |   |   |   dst_host_same_srv_rate >= 0.63 : normal (229/0)
+|   |   |   |   srv_serror_rate >= 0.58
+|   |   |   |   |   same_srv_rate < 0.97 : anomaly (170/0)
+|   |   |   |   |   same_srv_rate >= 0.97
+|   |   |   |   |   |   dst_host_same_srv_rate < 0.95 : anomaly (66/0)
+|   |   |   |   |   |   dst_host_same_srv_rate >= 0.95
+|   |   |   |   |   |   |   dst_host_rerror_rate < 0.25
+|   |   |   |   |   |   |   |   dst_host_srv_count < 70
+|   |   |   |   |   |   |   |   |   dst_host_srv_serror_rate < 0.58 : normal (1/0)
+|   |   |   |   |   |   |   |   |   dst_host_srv_serror_rate >= 0.58 : anomaly (20/0)
+|   |   |   |   |   |   |   |   dst_host_srv_count >= 70 : normal (19/0)
+|   |   |   |   |   |   |   dst_host_rerror_rate >= 0.25 : normal (12/0)
+|   |   |   flag = S1
+|   |   |   |   dst_bytes < 6169
+|   |   |   |   |   dst_host_same_src_port_rate < 0.01
+|   |   |   |   |   |   dst_host_rerror_rate < 0.01 : normal (6/0)
+|   |   |   |   |   |   dst_host_rerror_rate >= 0.01 : anomaly (2/0)
+|   |   |   |   |   dst_host_same_src_port_rate >= 0.01 : normal (16/0)
+|   |   |   |   dst_bytes >= 6169 : normal (148/0)
+|   |   |   flag = S2
+|   |   |   |   dst_host_srv_rerror_rate < 0.04 : normal (79/0)
+|   |   |   |   dst_host_srv_rerror_rate >= 0.04
+|   |   |   |   |   count < 1.5 : normal (3/0)
+|   |   |   |   |   count >= 1.5
+|   |   |   |   |   |   dst_host_srv_diff_host_rate < 0.01 : anomaly (4/0)
+|   |   |   |   |   |   dst_host_srv_diff_host_rate >= 0.01 : normal (4/0)
+|   |   |   flag = S3 : normal (17/0)
+|   |   |   flag = SF
+|   |   |   |   src_bytes < 34564
+|   |   |   |   |   srv_count < 2.5
+|   |   |   |   |   |   root_shell < 0.5
+|   |   |   |   |   |   |   dst_host_rerror_rate < 0.85
+|   |   |   |   |   |   |   |   serror_rate < 0.25
+|   |   |   |   |   |   |   |   |   diff_srv_rate < 0.83 : normal (4992/0)
+|   |   |   |   |   |   |   |   |   diff_srv_rate >= 0.83
+|   |   |   |   |   |   |   |   |   |   dst_host_srv_rerror_rate < 0.01
+|   |   |   |   |   |   |   |   |   |   |   src_bytes < 92.5 : anomaly (1/0)
+|   |   |   |   |   |   |   |   |   |   |   src_bytes >= 92.5 : normal (4/0)
+|   |   |   |   |   |   |   |   |   |   dst_host_srv_rerror_rate >= 0.01 : normal (1/0)
+|   |   |   |   |   |   |   |   serror_rate >= 0.25 : normal (77/0)
+|   |   |   |   |   |   |   dst_host_rerror_rate >= 0.85
+|   |   |   |   |   |   |   |   dst_host_srv_count < 57.5 : anomaly (1/0)
+|   |   |   |   |   |   |   |   dst_host_srv_count >= 57.5 : normal (9/0)
+|   |   |   |   |   |   root_shell >= 0.5
+|   |   |   |   |   |   |   num_access_files < 0.5 : normal (17/0)
+|   |   |   |   |   |   |   num_access_files >= 0.5 : anomaly (4/0)
+|   |   |   |   |   srv_count >= 2.5 : normal (29671/0)
+|   |   |   |   src_bytes >= 34564 : anomaly (6/0)
+|   |   |   flag = SH : anomaly (1/0)
+|   |   num_compromised >= 0.5
+|   |   |   dst_bytes < 8549.5
+|   |   |   |   dst_host_srv_rerror_rate < 0.01
+|   |   |   |   |   dst_bytes < 7928 : normal (11/0)
+|   |   |   |   |   dst_bytes >= 7928
+|   |   |   |   |   |   dst_host_count < 151 : anomaly (54/0)
+|   |   |   |   |   |   dst_host_count >= 151 : normal (1/0)
+|   |   |   |   dst_host_srv_rerror_rate >= 0.01
+|   |   |   |   |   src_bytes < 6991.5 : normal (4/0)
+|   |   |   |   |   src_bytes >= 6991.5 : anomaly (829/0)
+|   |   |   dst_bytes >= 8549.5 : normal (18/0)
+|   service = http_2784 : normal (0/0)
+|   service = http_443 : anomaly (15/0)
+|   service = http_8001 : normal (0/0)
+|   service = imap4
+|   |   dst_bytes < 69 : anomaly (16/0)
+|   |   dst_bytes >= 69
+|   |   |   logged_in = 0 : anomaly (2/0)
+|   |   |   logged_in = 1
+|   |   |   |   dst_host_rerror_rate < 0.01 : normal (3/0)
+|   |   |   |   dst_host_rerror_rate >= 0.01 : anomaly (1/0)
+|   service = IRC : normal (175/0)
+|   service = iso_tsap : anomaly (14/0)
+|   service = klogin : anomaly (38/0)
+|   service = kshell : anomaly (5/0)
+|   service = ldap : anomaly (12/0)
+|   service = link : anomaly (13/0)
+|   service = login : anomaly (20/0)
+|   service = mtp : anomaly (16/0)
+|   service = name : anomaly (14/0)
+|   service = netbios_dgm : anomaly (9/0)
+|   service = netbios_ns : anomaly (19/0)
+|   service = netbios_ssn : anomaly (8/0)
+|   service = netstat : anomaly (9/0)
+|   service = nnsp : anomaly (7/0)
+|   service = nntp : anomaly (9/0)
+|   service = ntp_u : normal (140/0)
+|   service = other
+|   |   src_bytes < 41.5
+|   |   |   dst_host_count < 98
+|   |   |   |   flag = OTH : normal (0/0)
+|   |   |   |   flag = REJ : normal (44/0)
+|   |   |   |   flag = RSTO : normal (0/0)
+|   |   |   |   flag = RSTOS0 : normal (0/0)
+|   |   |   |   flag = RSTR : normal (0/0)
+|   |   |   |   flag = S0 : normal (0/0)
+|   |   |   |   flag = S1 : normal (0/0)
+|   |   |   |   flag = S2 : normal (0/0)
+|   |   |   |   flag = S3 : normal (0/0)
+|   |   |   |   flag = SF
+|   |   |   |   |   dst_host_count < 44.5 : anomaly (4/0)
+|   |   |   |   |   dst_host_count >= 44.5 : normal (1/0)
+|   |   |   |   flag = SH : normal (0/0)
+|   |   |   dst_host_count >= 98
+|   |   |   |   duration < 0.5
+|   |   |   |   |   dst_host_serror_rate < 0.46
+|   |   |   |   |   |   src_bytes < 21 : anomaly (54/0)
+|   |   |   |   |   |   src_bytes >= 21
+|   |   |   |   |   |   |   dst_host_rerror_rate < 0.01
+|   |   |   |   |   |   |   |   src_bytes < 27.5 : normal (1/0)
+|   |   |   |   |   |   |   |   src_bytes >= 27.5 : normal (2/1)
+|   |   |   |   |   |   |   dst_host_rerror_rate >= 0.01 : anomaly (1/0)
+|   |   |   |   |   dst_host_serror_rate >= 0.46 : normal (2/0)
+|   |   |   |   duration >= 0.5 : anomaly (470/0)
+|   |   src_bytes >= 41.5
+|   |   |   src_bytes < 2611129.5
+|   |   |   |   dst_host_count < 5.5
+|   |   |   |   |   dst_host_same_srv_rate < 0.23 : anomaly (1/0)
+|   |   |   |   |   dst_host_same_srv_rate >= 0.23 : normal (10/0)
+|   |   |   |   dst_host_count >= 5.5 : normal (1835/0)
+|   |   |   src_bytes >= 2611129.5 : anomaly (5/0)
+|   service = pm_dump : anomaly (1/0)
+|   service = pop_2 : anomaly (6/0)
+|   service = pop_3
+|   |   dst_host_same_src_port_rate < 0.38 : normal (164/0)
+|   |   dst_host_same_src_port_rate >= 0.38
+|   |   |   dst_host_diff_srv_rate < 0.22 : normal (10/0)
+|   |   |   dst_host_diff_srv_rate >= 0.22
+|   |   |   |   src_bytes < 19.5 : anomaly (8/0)
+|   |   |   |   src_bytes >= 19.5 : normal (2/0)
+|   service = printer : anomaly (6/0)
+|   service = private
+|   |   flag = OTH : anomaly (27/0)
+|   |   flag = REJ
+|   |   |   dst_host_same_src_port_rate < 0.49 : anomaly (505/0)
+|   |   |   dst_host_same_src_port_rate >= 0.49
+|   |   |   |   dst_host_rerror_rate < 0.51 : normal (1/0)
+|   |   |   |   dst_host_rerror_rate >= 0.51 : anomaly (141/0)
+|   |   flag = RSTO : anomaly (2/0)
+|   |   flag = RSTOS0 : anomaly (3/0)
+|   |   flag = RSTR : anomaly (1281/0)
+|   |   flag = S0 : anomaly (143/0)
+|   |   flag = S1 : normal (1/0)
+|   |   flag = S2 : normal (0/0)
+|   |   flag = S3 : normal (0/0)
+|   |   flag = SF
+|   |   |   src_bytes < 101.5
+|   |   |   |   count < 1.5
+|   |   |   |   |   dst_host_diff_srv_rate < 0.01
+|   |   |   |   |   |   dst_host_same_src_port_rate < 0.64
+|   |   |   |   |   |   |   dst_host_count < 239 : anomaly (4/0)
+|   |   |   |   |   |   |   dst_host_count >= 239
+|   |   |   |   |   |   |   |   dst_host_same_src_port_rate < 0.08 : anomaly (1/0)
+|   |   |   |   |   |   |   |   dst_host_same_src_port_rate >= 0.08
+|   |   |   |   |   |   |   |   |   dst_host_srv_count < 54.5 : normal (1/0)
+|   |   |   |   |   |   |   |   |   dst_host_srv_count >= 54.5 : anomaly (1/0)
+|   |   |   |   |   |   dst_host_same_src_port_rate >= 0.64 : normal (1/0)
+|   |   |   |   |   dst_host_diff_srv_rate >= 0.01 : anomaly (33/0)
+|   |   |   |   count >= 1.5 : anomaly (1351/0)
+|   |   |   src_bytes >= 101.5
+|   |   |   |   dst_host_same_srv_rate < 0.9
+|   |   |   |   |   src_bytes < 156 : normal (234/0)
+|   |   |   |   |   src_bytes >= 156
+|   |   |   |   |   |   count < 1.5
+|   |   |   |   |   |   |   dst_host_same_srv_rate < 0.65 : normal (1/0)
+|   |   |   |   |   |   |   dst_host_same_srv_rate >= 0.65
+|   |   |   |   |   |   |   |   dst_host_diff_srv_rate < 0.01
+|   |   |   |   |   |   |   |   |   dst_host_count < 250.5 : anomaly (49/0)
+|   |   |   |   |   |   |   |   |   dst_host_count >= 250.5 : normal (3/0)
+|   |   |   |   |   |   |   |   dst_host_diff_srv_rate >= 0.01 : anomaly (39/0)
+|   |   |   |   |   |   count >= 1.5
+|   |   |   |   |   |   |   dst_bytes < 103.5
+|   |   |   |   |   |   |   |   dst_host_count < 250.5 : anomaly (87/0)
+|   |   |   |   |   |   |   |   dst_host_count >= 250.5 : normal (2/0)
+|   |   |   |   |   |   |   dst_bytes >= 103.5
+|   |   |   |   |   |   |   |   dst_host_count < 252.5 : anomaly (1/0)
+|   |   |   |   |   |   |   |   dst_host_count >= 252.5 : normal (1/0)
+|   |   |   |   dst_host_same_srv_rate >= 0.9
+|   |   |   |   |   diff_srv_rate < 0.34
+|   |   |   |   |   |   duration < 0.5
+|   |   |   |   |   |   |   count < 1.5
+|   |   |   |   |   |   |   |   dst_bytes < 52.5
+|   |   |   |   |   |   |   |   |   dst_host_count < 92.5
+|   |   |   |   |   |   |   |   |   |   dst_host_srv_count < 16
+|   |   |   |   |   |   |   |   |   |   |   src_bytes < 160 : normal (7/0)
+|   |   |   |   |   |   |   |   |   |   |   src_bytes >= 160 : anomaly (7/0)
+|   |   |   |   |   |   |   |   |   |   dst_host_srv_count >= 16
+|   |   |   |   |   |   |   |   |   |   |   dst_host_srv_count < 27.5 : anomaly (6/0)
+|   |   |   |   |   |   |   |   |   |   |   dst_host_srv_count >= 27.5
+|   |   |   |   |   |   |   |   |   |   |   |   dst_host_diff_srv_rate < 0.04 : anomaly (2/0)
+|   |   |   |   |   |   |   |   |   |   |   |   dst_host_diff_srv_rate >= 0.04 : normal (2/0)
+|   |   |   |   |   |   |   |   |   dst_host_count >= 92.5 : normal (11/0)
+|   |   |   |   |   |   |   |   dst_bytes >= 52.5 : normal (228/0)
+|   |   |   |   |   |   |   count >= 1.5
+|   |   |   |   |   |   |   |   dst_host_count < 31
+|   |   |   |   |   |   |   |   |   src_bytes < 156 : normal (5/0)
+|   |   |   |   |   |   |   |   |   src_bytes >= 156 : anomaly (15/0)
+|   |   |   |   |   |   |   |   dst_host_count >= 31
+|   |   |   |   |   |   |   |   |   srv_count < 2.5
+|   |   |   |   |   |   |   |   |   |   dst_host_same_src_port_rate < 0.49 : normal (38/0)
+|   |   |   |   |   |   |   |   |   |   dst_host_same_src_port_rate >= 0.49 : anomaly (1/0)
+|   |   |   |   |   |   |   |   |   srv_count >= 2.5 : normal (3/0)
+|   |   |   |   |   |   duration >= 0.5 : normal (109/0)
+|   |   |   |   |   diff_srv_rate >= 0.34 : normal (21/0)
+|   |   flag = SH : anomaly (214/0)
+|   service = red_i : normal (8/0)
+|   service = remote_job : anomaly (12/0)
+|   service = rje : anomaly (14/0)
+|   service = shell
+|   |   src_bytes < 19.5 : anomaly (6/0)
+|   |   src_bytes >= 19.5 : normal (4/0)
+|   service = smtp
+|   |   src_bytes < 14.5
+|   |   |   dst_host_srv_serror_rate < 0.06
+|   |   |   |   dst_host_same_srv_rate < 0.28
+|   |   |   |   |   duration < 0.5
+|   |   |   |   |   |   srv_count < 4.5
+|   |   |   |   |   |   |   dst_host_rerror_rate < 0.07
+|   |   |   |   |   |   |   |   dst_host_serror_rate < 0.81
+|   |   |   |   |   |   |   |   |   logged_in = 0 : normal (12/0)
+|   |   |   |   |   |   |   |   |   logged_in = 1 : anomaly (1/0)
+|   |   |   |   |   |   |   |   dst_host_serror_rate >= 0.81 : anomaly (3/0)
+|   |   |   |   |   |   |   dst_host_rerror_rate >= 0.07 : anomaly (11/0)
+|   |   |   |   |   |   srv_count >= 4.5 : anomaly (5/0)
+|   |   |   |   |   duration >= 0.5 : anomaly (10/0)
+|   |   |   |   dst_host_same_srv_rate >= 0.28 : normal (92/0)
+|   |   |   dst_host_srv_serror_rate >= 0.06
+|   |   |   |   serror_rate < 0.75 : normal (2/0)
+|   |   |   |   serror_rate >= 0.75 : anomaly (89/0)
+|   |   src_bytes >= 14.5
+|   |   |   dst_host_rerror_rate < 0.08 : normal (6610/0)
+|   |   |   dst_host_rerror_rate >= 0.08
+|   |   |   |   duration < 17903
+|   |   |   |   |   src_bytes < 1179 : normal (113/0)
+|   |   |   |   |   src_bytes >= 1179
+|   |   |   |   |   |   dst_host_srv_rerror_rate < 0.14
+|   |   |   |   |   |   |   dst_host_rerror_rate < 0.33
+|   |   |   |   |   |   |   |   src_bytes < 1700.5 : normal (5/0)
+|   |   |   |   |   |   |   |   src_bytes >= 1700.5
+|   |   |   |   |   |   |   |   |   dst_host_rerror_rate < 0.3 : normal (4/0)
+|   |   |   |   |   |   |   |   |   dst_host_rerror_rate >= 0.3 : anomaly (6/0)
+|   |   |   |   |   |   |   dst_host_rerror_rate >= 0.33
+|   |   |   |   |   |   |   |   dst_host_same_srv_rate < 0.01 : anomaly (1/0)
+|   |   |   |   |   |   |   |   dst_host_same_srv_rate >= 0.01 : normal (111/0)
+|   |   |   |   |   |   dst_host_srv_rerror_rate >= 0.14 : anomaly (1/0)
+|   |   |   |   duration >= 17903 : anomaly (1/0)
+|   service = sql_net : anomaly (10/0)
+|   service = ssh
+|   |   dst_bytes < 4815 : anomaly (21/0)
+|   |   dst_bytes >= 4815 : normal (5/0)
+|   service = sunrpc : anomaly (13/0)
+|   service = supdup : anomaly (8/0)
+|   service = systat : anomaly (8/0)
+|   service = telnet
+|   |   srv_count < 1.5
+|   |   |   flag = OTH
+|   |   |   |   dst_host_srv_count < 4 : anomaly (1/0)
+|   |   |   |   dst_host_srv_count >= 4 : normal (2/0)
+|   |   |   flag = REJ : normal (0/0)
+|   |   |   flag = RSTO
+|   |   |   |   dst_host_diff_srv_rate < 0.01
+|   |   |   |   |   dst_host_srv_serror_rate < 0.02 : normal (3/0)
+|   |   |   |   |   dst_host_srv_serror_rate >= 0.02 : anomaly (21/0)
+|   |   |   |   dst_host_diff_srv_rate >= 0.01
+|   |   |   |   |   dst_host_same_src_port_rate < 0.2 : normal (50/0)
+|   |   |   |   |   dst_host_same_src_port_rate >= 0.2 : anomaly (9/0)
+|   |   |   flag = RSTOS0 : anomaly (1/0)
+|   |   |   flag = RSTR
+|   |   |   |   dst_bytes < 1335.5
+|   |   |   |   |   dst_host_same_srv_rate < 0.17 : anomaly (3/0)
+|   |   |   |   |   dst_host_same_srv_rate >= 0.17
+|   |   |   |   |   |   src_bytes < 82.5 : normal (1/0)
+|   |   |   |   |   |   src_bytes >= 82.5 : anomaly (2/0)
+|   |   |   |   dst_bytes >= 1335.5 : normal (9/0)
+|   |   |   flag = S0
+|   |   |   |   dst_host_count < 253.5
+|   |   |   |   |   dst_host_diff_srv_rate < 0.07
+|   |   |   |   |   |   dst_host_diff_srv_rate < 0.01 : anomaly (4/0)
+|   |   |   |   |   |   dst_host_diff_srv_rate >= 0.01
+|   |   |   |   |   |   |   dst_host_serror_rate < 0.49 : normal (1/0)
+|   |   |   |   |   |   |   dst_host_serror_rate >= 0.49 : anomaly (3/0)
+|   |   |   |   |   dst_host_diff_srv_rate >= 0.07 : normal (4/0)
+|   |   |   |   dst_host_count >= 253.5 : anomaly (8/0)
+|   |   |   flag = S1 : normal (72/0)
+|   |   |   flag = S2 : normal (0/0)
+|   |   |   flag = S3
+|   |   |   |   hot < 0.5 : normal (1/0)
+|   |   |   |   hot >= 0.5 : anomaly (1/0)
+|   |   |   flag = SF
+|   |   |   |   dst_host_same_srv_rate < 0.55
+|   |   |   |   |   dst_bytes < 25.5
+|   |   |   |   |   |   dst_host_count < 114.5 : anomaly (4/0)
+|   |   |   |   |   |   dst_host_count >= 114.5 : normal (1/0)
+|   |   |   |   |   dst_bytes >= 25.5
+|   |   |   |   |   |   dst_host_same_srv_rate < 0.04
+|   |   |   |   |   |   |   num_shells < 0.5
+|   |   |   |   |   |   |   |   dst_host_diff_srv_rate < 0.03
+|   |   |   |   |   |   |   |   |   su_attempted < 0.5
+|   |   |   |   |   |   |   |   |   |   duration < 58.5 : normal (15/0)
+|   |   |   |   |   |   |   |   |   |   duration >= 58.5
+|   |   |   |   |   |   |   |   |   |   |   src_bytes < 85 : normal (1/0)
+|   |   |   |   |   |   |   |   |   |   |   src_bytes >= 85
+|   |   |   |   |   |   |   |   |   |   |   |   dst_host_srv_count < 3.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   duration < 6046.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   dst_host_same_srv_rate < 0.01
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   duration < 161.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   dst_bytes < 204 : anomaly (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   dst_bytes >= 204 : normal (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   duration >= 161.5 : normal (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   dst_host_same_srv_rate >= 0.01 : anomaly (2/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   duration >= 6046.5 : normal (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   dst_host_srv_count >= 3.5 : anomaly (2/0)
+|   |   |   |   |   |   |   |   |   su_attempted >= 0.5 : normal (7/0)
+|   |   |   |   |   |   |   |   dst_host_diff_srv_rate >= 0.03
+|   |   |   |   |   |   |   |   |   dst_bytes < 49899 : normal (170/0)
+|   |   |   |   |   |   |   |   |   dst_bytes >= 49899
+|   |   |   |   |   |   |   |   |   |   dst_host_srv_diff_host_rate < 0.34 : normal (8/0)
+|   |   |   |   |   |   |   |   |   |   dst_host_srv_diff_host_rate >= 0.34 : anomaly (1/0)
+|   |   |   |   |   |   |   num_shells >= 0.5 : anomaly (3/0)
+|   |   |   |   |   |   dst_host_same_srv_rate >= 0.04
+|   |   |   |   |   |   |   num_shells < 0.5
+|   |   |   |   |   |   |   |   dst_host_serror_rate < 0.21 : normal (304/0)
+|   |   |   |   |   |   |   |   dst_host_serror_rate >= 0.21
+|   |   |   |   |   |   |   |   |   dst_host_serror_rate < 0.23
+|   |   |   |   |   |   |   |   |   |   duration < 5394 : anomaly (1/0)
+|   |   |   |   |   |   |   |   |   |   duration >= 5394 : normal (1/0)
+|   |   |   |   |   |   |   |   |   dst_host_serror_rate >= 0.23 : normal (172/0)
+|   |   |   |   |   |   |   num_shells >= 0.5
+|   |   |   |   |   |   |   |   num_file_creations < 2.5 : anomaly (1/0)
+|   |   |   |   |   |   |   |   num_file_creations >= 2.5 : normal (2/0)
+|   |   |   |   dst_host_same_srv_rate >= 0.55
+|   |   |   |   |   duration < 19
+|   |   |   |   |   |   dst_host_same_srv_rate < 0.83 : normal (2/0)
+|   |   |   |   |   |   dst_host_same_srv_rate >= 0.83
+|   |   |   |   |   |   |   dst_host_rerror_rate < 0.47 : normal (28/0)
+|   |   |   |   |   |   |   dst_host_rerror_rate >= 0.47 : anomaly (1/0)
+|   |   |   |   |   duration >= 19
+|   |   |   |   |   |   hot < 2.5
+|   |   |   |   |   |   |   logged_in = 0 : anomaly (2/0)
+|   |   |   |   |   |   |   logged_in = 1
+|   |   |   |   |   |   |   |   dst_bytes < 9282.5
+|   |   |   |   |   |   |   |   |   root_shell < 0.5
+|   |   |   |   |   |   |   |   |   |   duration < 388
+|   |   |   |   |   |   |   |   |   |   |   dst_host_same_src_port_rate < 0.35 : anomaly (2/0)
+|   |   |   |   |   |   |   |   |   |   |   dst_host_same_src_port_rate >= 0.35
+|   |   |   |   |   |   |   |   |   |   |   |   duration < 30 : normal (3/0)
+|   |   |   |   |   |   |   |   |   |   |   |   duration >= 30
+|   |   |   |   |   |   |   |   |   |   |   |   |   dst_host_count < 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   duration < 117.5 : normal (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   duration >= 117.5 : anomaly (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   dst_host_count >= 1.5 : anomaly (1/0)
+|   |   |   |   |   |   |   |   |   |   duration >= 388 : normal (3/0)
+|   |   |   |   |   |   |   |   |   root_shell >= 0.5 : anomaly (2/0)
+|   |   |   |   |   |   |   |   dst_bytes >= 9282.5 : normal (29/0)
+|   |   |   |   |   |   hot >= 2.5 : anomaly (19/0)
+|   |   |   flag = SH : anomaly (1/0)
+|   |   srv_count >= 1.5
+|   |   |   dst_host_srv_serror_rate < 0.82
+|   |   |   |   dst_bytes < 1335.5
+|   |   |   |   |   src_bytes < 82
+|   |   |   |   |   |   dst_host_same_src_port_rate < 0.02 : normal (1/0)
+|   |   |   |   |   |   dst_host_same_src_port_rate >= 0.02 : anomaly (14/0)
+|   |   |   |   |   src_bytes >= 82 : anomaly (27/0)
+|   |   |   |   dst_bytes >= 1335.5 : normal (13/0)
+|   |   |   dst_host_srv_serror_rate >= 0.82 : anomaly (161/0)
+|   service = tftp_u : normal (0/0)
+|   service = tim_i
+|   |   dst_host_same_src_port_rate < 0.54 : normal (3/0)
+|   |   dst_host_same_src_port_rate >= 0.54
+|   |   |   srv_count < 1.5
+|   |   |   |   dst_host_srv_count < 1.5 : normal (2/1)
+|   |   |   |   dst_host_srv_count >= 1.5 : anomaly (1/0)
+|   |   |   srv_count >= 1.5 : anomaly (1/0)
+|   service = time
+|   |   dst_host_rerror_rate < 0.1
+|   |   |   diff_srv_rate < 0.09
+|   |   |   |   dst_host_diff_srv_rate < 0.5 : normal (73/0)
+|   |   |   |   dst_host_diff_srv_rate >= 0.5 : anomaly (1/0)
+|   |   |   diff_srv_rate >= 0.09 : anomaly (10/0)
+|   |   dst_host_rerror_rate >= 0.1
+|   |   |   dst_host_count < 11 : normal (3/0)
+|   |   |   dst_host_count >= 11 : anomaly (19/0)
+|   service = urh_i : normal (9/0)
+|   service = urp_i
+|   |   dst_host_diff_srv_rate < 0.35 : normal (305/0)
+|   |   dst_host_diff_srv_rate >= 0.35
+|   |   |   src_bytes < 109 : anomaly (3/0)
+|   |   |   src_bytes >= 109 : normal (2/0)
+|   service = uucp : anomaly (15/0)
+|   service = uucp_path : anomaly (10/0)
+|   service = vmnet : anomaly (8/0)
+|   service = whois : anomaly (17/0)
+|   service = X11
+|   |   dst_host_same_src_port_rate < 0.01
+|   |   |   srv_rerror_rate < 0.5 : normal (15/0)
+|   |   |   srv_rerror_rate >= 0.5
+|   |   |   |   same_srv_rate < 0.88 : normal (3/0)
+|   |   |   |   same_srv_rate >= 0.88
+|   |   |   |   |   dst_host_same_srv_rate < 0.01 : anomaly (1/0)
+|   |   |   |   |   dst_host_same_srv_rate >= 0.01 : normal (3/0)
+|   |   dst_host_same_src_port_rate >= 0.01 : normal (46/0)
+|   service = Z39_50 : anomaly (9/0)
+
+Size of the tree : 1510
+
+Time taken to build model: 0.59 seconds
+
+=== Evaluation on training set ===
+
+Time taken to test model on training data: 0.45 seconds
+
+=== Summary ===
+
+Correctly Classified Instances      125966               99.9944 %
+Incorrectly Classified Instances         7                0.0056 %
+Kappa statistic                          0.9999
+Mean absolute error                      0.0001
+Root mean squared error                  0.0053
+Relative absolute error                  0.0112 %
+Root relative squared error              1.0567 %
+Total Number of Instances           125973     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     normal
+                 1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     anomaly
+Weighted Avg.    1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     
+
+=== Confusion Matrix ===
+
+     a     b   <-- classified as
+ 67343     0 |     a = normal
+     7 58623 |     b = anomaly
+
+
+=== Re-evaluation on test set ===
+
+User supplied test set
+Relation:     KDDTest
+Instances:     unknown (yet). Reading incrementally
+Attributes:   42
+
+=== Summary ===
+
+Correctly Classified Instances       18341               81.3565 %
+Incorrectly Classified Instances      4203               18.6435 %
+Kappa statistic                          0.6321
+Mean absolute error                      0.1863
+Root mean squared error                  0.4315
+Total Number of Instances            22544     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.921    0.267    0.723      0.921    0.810      0.650    0.827     0.701     normal
+                 0.733    0.079    0.924      0.733    0.817      0.650    0.827     0.830     anomaly
+Weighted Avg.    0.814    0.160    0.837      0.814    0.814      0.650    0.827     0.774     
+
+=== Confusion Matrix ===
+
+    a    b   <-- classified as
+ 8940  771 |    a = normal
+ 3432 9401 |    b = anomaly
+

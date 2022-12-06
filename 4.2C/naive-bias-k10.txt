@@ -1,0 +1,435 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.bayes.NaiveBayes 
+Relation:     KDDTrain
+Instances:    125973
+Attributes:   42
+              duration
+              protocol_type
+              service
+              flag
+              src_bytes
+              dst_bytes
+              land
+              wrong_fragment
+              urgent
+              hot
+              num_failed_logins
+              logged_in
+              num_compromised
+              root_shell
+              su_attempted
+              num_root
+              num_file_creations
+              num_shells
+              num_access_files
+              num_outbound_cmds
+              is_host_login
+              is_guest_login
+              count
+              srv_count
+              serror_rate
+              srv_serror_rate
+              rerror_rate
+              srv_rerror_rate
+              same_srv_rate
+              diff_srv_rate
+              srv_diff_host_rate
+              dst_host_count
+              dst_host_srv_count
+              dst_host_same_srv_rate
+              dst_host_diff_srv_rate
+              dst_host_same_src_port_rate
+              dst_host_srv_diff_host_rate
+              dst_host_serror_rate
+              dst_host_srv_serror_rate
+              dst_host_rerror_rate
+              dst_host_srv_rerror_rate
+              class
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+Naive Bayes Classifier
+
+                                    Class
+Attribute                          normal     anomaly
+                                   (0.53)      (0.47)
+======================================================
+duration
+  mean                            168.4901    423.2992
+  std. dev.                      1304.4296   3547.6669
+  weight sum                         67343       58630
+  precision                        14.3987     14.3987
+
+protocol_type
+  tcp                              53601.0     49090.0
+  udp                              12435.0      2560.0
+  icmp                              1310.0      6983.0
+  [total]                          67346.0     58633.0
+
+service
+  aol                                  1.0         3.0
+  auth                               237.0       720.0
+  bgp                                  1.0       711.0
+  courier                              1.0       735.0
+  csnet_ns                             1.0       546.0
+  ctf                                  1.0       564.0
+  daytime                              1.0       522.0
+  discard                              1.0       539.0
+  domain                              39.0       532.0
+  domain_u                          9035.0        10.0
+  echo                                 1.0       435.0
+  eco_i                              498.0      4090.0
+  ecr_i                              191.0      2888.0
+  efs                                  1.0       486.0
+  exec                                 1.0       475.0
+  finger                             546.0      1223.0
+  ftp                                919.0       837.0
+  ftp_data                          4985.0      1877.0
+  gopher                               1.0       519.0
+  harvest                              1.0         3.0
+  hostnames                            1.0       461.0
+  http                             38050.0      2290.0
+  http_2784                            1.0         2.0
+  http_443                             1.0       531.0
+  http_8001                            1.0         3.0
+  imap4                                4.0       645.0
+  IRC                                187.0         2.0
+  iso_tsap                             1.0       688.0
+  klogin                               1.0       434.0
+  kshell                               1.0       300.0
+  ldap                                 1.0       411.0
+  link                                 1.0       476.0
+  login                                1.0       430.0
+  mtp                                  1.0       440.0
+  name                                 1.0       452.0
+  netbios_dgm                          1.0       406.0
+  netbios_ns                           1.0       348.0
+  netbios_ssn                          1.0       363.0
+  netstat                              1.0       361.0
+  nnsp                                 1.0       631.0
+  nntp                                 1.0       297.0
+  ntp_u                              169.0         1.0
+  other                             2605.0      1756.0
+  pm_dump                              1.0         6.0
+  pop_2                                1.0        79.0
+  pop_3                              187.0        79.0
+  printer                              1.0        70.0
+  private                            983.0     20872.0
+  red_i                                9.0         1.0
+  remote_job                           1.0        79.0
+  rje                                  1.0        87.0
+  shell                                5.0        62.0
+  smtp                              7030.0       285.0
+  sql_net                              1.0       246.0
+  ssh                                  6.0       307.0
+  sunrpc                               1.0       382.0
+  supdup                               1.0       545.0
+  systat                               1.0       478.0
+  telnet                             918.0      1437.0
+  tftp_u                               4.0         1.0
+  tim_i                                6.0         4.0
+  time                                77.0       579.0
+  urh_i                               11.0         1.0
+  urp_i                              600.0         4.0
+  uucp                                 1.0       781.0
+  uucp_path                            1.0       690.0
+  vmnet                                1.0       618.0
+  whois                                1.0       694.0
+  X11                                 68.0         7.0
+  Z39_50                               1.0       863.0
+  [total]                          67413.0     58700.0
+
+flag
+  OTH                                 12.0        36.0
+  REJ                               2694.0      8541.0
+  RSTO                               220.0      1344.0
+  RSTOS0                               1.0       104.0
+  RSTR                               147.0      2276.0
+  S0                                 355.0     34498.0
+  S1                                 362.0         5.0
+  S2                                 120.0         9.0
+  S3                                  46.0         5.0
+  SF                               63394.0     11553.0
+  SH                                   3.0       270.0
+  [total]                          67354.0     58641.0
+
+src_bytes
+  mean                          11755.0451  81702.3704
+  std. dev.                    416573.69838592761.5083
+  weight sum                         67343       58630
+  precision                    413162.8407 413162.8407
+
+dst_bytes
+  mean                           1962.9031   37386.753
+  std. dev.                     65742.96575894102.6751
+  weight sum                         67343       58630
+  precision                    140475.8607 140475.8607
+
+land
+  0                                67337.0     58613.0
+  1                                    8.0        19.0
+  [total]                          67345.0     58632.0
+
+wrong_fragment
+  mean                                   0      0.0505
+  std. dev.                           0.25      0.3756
+  weight sum                         67343       58630
+  precision                            1.5         1.5
+
+urgent
+  mean                              0.0001      0.0001
+  std. dev.                         0.1667      0.1667
+  weight sum                         67343       58630
+  precision                              1           1
+
+hot
+  mean                              0.2312      0.1872
+  std. dev.                         2.3702       2.001
+  weight sum                         67343       58630
+  precision                         2.8519      2.8519
+
+num_failed_logins
+  mean                              0.0014       0.001
+  std. dev.                         0.1667      0.1667
+  weight sum                         67343       58630
+  precision                              1           1
+
+logged_in
+  0                                19487.0     56636.0
+  1                                47858.0      1996.0
+  [total]                          67345.0     58632.0
+
+num_compromised
+  mean                              0.4851           0
+  std. dev.                        32.6426     14.3276
+  weight sum                         67343       58630
+  precision                        85.9655     85.9655
+
+root_shell
+  mean                               0.002      0.0005
+  std. dev.                         0.1667      0.1667
+  weight sum                         67343       58630
+  precision                              1           1
+
+su_attempted
+  mean                               0.002           0
+  std. dev.                         0.1667      0.1667
+  weight sum                         67343       58630
+  precision                              1           1
+
+num_root
+  mean                              0.5298      0.0016
+  std. dev.                        33.4093     15.3663
+  weight sum                         67343       58630
+  precision                        92.1975     92.1975
+
+num_file_creations
+  mean                               0.023      0.0017
+  std. dev.                         0.6536      0.2108
+  weight sum                         67343       58630
+  precision                         1.2647      1.2647
+
+num_shells
+  mean                              0.0006      0.0002
+  std. dev.                         0.1667      0.1667
+  weight sum                         67343       58630
+  precision                              1           1
+
+num_access_files
+  mean                              0.0075      0.0002
+  std. dev.                         0.1667      0.1667
+  weight sum                         67343       58630
+  precision                              1           1
+
+num_outbound_cmds
+  mean                                   0           0
+  std. dev.                         0.0017      0.0017
+  weight sum                         67343       58630
+  precision                           0.01        0.01
+
+is_host_login
+  0                                67343.0     58631.0
+  1                                    2.0         1.0
+  [total]                          67345.0     58632.0
+
+is_guest_login
+  0                                66471.0     58317.0
+  1                                  874.0       315.0
+  [total]                          67345.0     58632.0
+
+count
+  mean                             22.5179      154.85
+  std. dev.                        54.0257    124.3334
+  weight sum                         67343       58630
+  precision                              1           1
+
+srv_count
+  mean                             27.7278      27.857
+  std. dev.                        60.1699     84.6978
+  weight sum                         67343       58630
+  precision                         1.0059      1.0059
+
+serror_rate
+  mean                              0.0134      0.5958
+  std. dev.                         0.0942      0.4866
+  weight sum                         67343       58630
+  precision                         0.0114      0.0114
+
+srv_serror_rate
+  mean                               0.012      0.5931
+  std. dev.                         0.0862      0.4902
+  weight sum                         67343       58630
+  precision                         0.0118      0.0118
+
+rerror_rate
+  mean                              0.0442       0.207
+  std. dev.                          0.203      0.3989
+  weight sum                         67343       58630
+  precision                         0.0123      0.0123
+
+srv_rerror_rate
+  mean                              0.0446      0.2091
+  std. dev.                         0.2022      0.4045
+  weight sum                         67343       58630
+  precision                         0.0164      0.0164
+
+same_srv_rate
+  mean                              0.9694      0.3067
+  std. dev.                         0.1444      0.3957
+  weight sum                         67343       58630
+  precision                           0.01        0.01
+
+diff_srv_rate
+  mean                              0.0288      0.1048
+  std. dev.                         0.1456      0.2059
+  weight sum                         67343       58630
+  precision                         0.0106      0.0106
+
+srv_diff_host_rate
+  mean                              0.1267      0.0641
+  std. dev.                         0.2718      0.2414
+  weight sum                         67343       58630
+  precision                         0.0169      0.0169
+
+dst_host_count
+  mean                            147.4319    222.0253
+  std. dev.                       101.7846     79.1956
+  weight sum                         67343       58630
+  precision                              1           1
+
+dst_host_srv_count
+  mean                            190.2858     29.9291
+  std. dev.                        92.6077     52.2888
+  weight sum                         67343       58630
+  precision                              1           1
+
+dst_host_same_srv_rate
+  mean                              0.8119      0.1874
+  std. dev.                         0.3241      0.3224
+  weight sum                         67343       58630
+  precision                           0.01        0.01
+
+dst_host_diff_srv_rate
+  mean                              0.0401      0.1321
+  std. dev.                         0.1285      0.2306
+  weight sum                         67343       58630
+  precision                           0.01        0.01
+
+dst_host_same_src_port_rate
+  mean                              0.1217       0.179
+  std. dev.                         0.2544      0.3593
+  weight sum                         67343       58630
+  precision                           0.01        0.01
+
+dst_host_srv_diff_host_rate
+  mean                              0.0255        0.04
+  std. dev.                         0.0689      0.1471
+  weight sum                         67343       58630
+  precision                         0.0135      0.0135
+
+dst_host_serror_rate
+  mean                              0.0139      0.5952
+  std. dev.                          0.092      0.4845
+  weight sum                         67343       58630
+  precision                           0.01        0.01
+
+dst_host_srv_serror_rate
+  mean                              0.0061      0.5913
+  std. dev.                         0.0567      0.4899
+  weight sum                         67343       58630
+  precision                         0.0101      0.0101
+
+dst_host_rerror_rate
+  mean                              0.0466      0.2018
+  std. dev.                         0.1953      0.3811
+  weight sum                         67343       58630
+  precision                           0.01        0.01
+
+dst_host_srv_rerror_rate
+  mean                              0.0447       0.207
+  std. dev.                         0.1922      0.4034
+  weight sum                         67343       58630
+  precision                           0.01        0.01
+
+
+
+Time taken to build model: 0.41 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances      113856               90.3813 %
+Incorrectly Classified Instances     12117                9.6187 %
+Kappa statistic                          0.8059
+Mean absolute error                      0.0965
+Root mean squared error                  0.3058
+Relative absolute error                 19.3981 %
+Root relative squared error             61.312  %
+Total Number of Instances           125973     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.936    0.134    0.890      0.936    0.912      0.807    0.967     0.964     normal
+                 0.866    0.064    0.922      0.866    0.893      0.807    0.965     0.949     anomaly
+Weighted Avg.    0.904    0.101    0.905      0.904    0.904      0.807    0.966     0.957     
+
+=== Confusion Matrix ===
+
+     a     b   <-- classified as
+ 63058  4285 |     a = normal
+  7832 50798 |     b = anomaly
+
+
+=== Re-evaluation on test set ===
+
+User supplied test set
+Relation:     KDDTest
+Instances:     unknown (yet). Reading incrementally
+Attributes:   42
+
+=== Summary ===
+
+Correctly Classified Instances       17161               76.1222 %
+Incorrectly Classified Instances      5383               23.8778 %
+Kappa statistic                          0.5366
+Mean absolute error                      0.2386
+Root mean squared error                  0.4862
+Total Number of Instances            22544     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.931    0.367    0.657      0.931    0.771      0.572    0.895     0.844     normal
+                 0.633    0.069    0.924      0.633    0.751      0.572    0.917     0.911     anomaly
+Weighted Avg.    0.761    0.197    0.809      0.761    0.759      0.572    0.908     0.882     
+
+=== Confusion Matrix ===
+
+    a    b   <-- classified as
+ 9041  670 |    a = normal
+ 4713 8120 |    b = anomaly
+
+

@@ -1,0 +1,241 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.functions.SGD -F 0 -L 0.01 -R 1.0E-4 -E 500 -C 0.001 -S 1
+Relation:     KDDTrain
+Instances:    125973
+Attributes:   42
+              duration
+              protocol_type
+              service
+              flag
+              src_bytes
+              dst_bytes
+              land
+              wrong_fragment
+              urgent
+              hot
+              num_failed_logins
+              logged_in
+              num_compromised
+              root_shell
+              su_attempted
+              num_root
+              num_file_creations
+              num_shells
+              num_access_files
+              num_outbound_cmds
+              is_host_login
+              is_guest_login
+              count
+              srv_count
+              serror_rate
+              srv_serror_rate
+              rerror_rate
+              srv_rerror_rate
+              same_srv_rate
+              diff_srv_rate
+              srv_diff_host_rate
+              dst_host_count
+              dst_host_srv_count
+              dst_host_same_srv_rate
+              dst_host_diff_srv_rate
+              dst_host_same_src_port_rate
+              dst_host_srv_diff_host_rate
+              dst_host_serror_rate
+              dst_host_srv_serror_rate
+              dst_host_rerror_rate
+              dst_host_srv_rerror_rate
+              class
+Test mode:    evaluate on training data
+
+=== Classifier model (full training set) ===
+
+Loss function: Hinge loss (SVM)
+
+class = 
+
+        -0.221  (normalized) duration
+ +       0.11   (normalized) protocol_type=tcp
+ +      -1.3893 (normalized) protocol_type=udp
+ +      -0.6397 (normalized) protocol_type=icmp
+ +       0      (normalized) service=aol
+ +      -1.7392 (normalized) service=auth
+ +       0.2599 (normalized) service=bgp
+ +       0.4198 (normalized) service=courier
+ +       1.5293 (normalized) service=csnet_ns
+ +       1.0995 (normalized) service=ctf
+ +       0.8696 (normalized) service=daytime
+ +       0.2399 (normalized) service=discard
+ +      -1.8991 (normalized) service=domain
+ +      -1.0895 (normalized) service=domain_u
+ +       0.8696 (normalized) service=echo
+ +       1.0395 (normalized) service=eco_i
+ +       0.8496 (normalized) service=ecr_i
+ +       0.4898 (normalized) service=efs
+ +       0.2799 (normalized) service=exec
+ +      -1.9491 (normalized) service=finger
+ +      -1.8292 (normalized) service=ftp
+ +      -1.9591 (normalized) service=ftp_data
+ +       2.8487 (normalized) service=gopher
+ +       0      (normalized) service=harvest
+ +       1.7193 (normalized) service=hostnames
+ +      -1.4493 (normalized) service=http
+ +       0      (normalized) service=http_2784
+ +       0.5597 (normalized) service=http_443
+ +       0      (normalized) service=http_8001
+ +       0.5097 (normalized) service=imap4
+ +      -8.9257 (normalized) service=IRC
+ +       1.7593 (normalized) service=iso_tsap
+ +       0.3598 (normalized) service=klogin
+ +       0.2599 (normalized) service=kshell
+ +       0.9596 (normalized) service=ldap
+ +       1.0895 (normalized) service=link
+ +       0.9496 (normalized) service=login
+ +       1.2094 (normalized) service=mtp
+ +       1.8591 (normalized) service=name
+ +       0.4898 (normalized) service=netbios_dgm
+ +       0.2999 (normalized) service=netbios_ns
+ +       0.3298 (normalized) service=netbios_ssn
+ +       1.4993 (normalized) service=netstat
+ +       0.4798 (normalized) service=nnsp
+ +       2.4489 (normalized) service=nntp
+ +      -2.0591 (normalized) service=ntp_u
+ +      -1.8891 (normalized) service=other
+ +       1.5293 (normalized) service=pm_dump
+ +       0.5597 (normalized) service=pop_2
+ +      -2.7887 (normalized) service=pop_3
+ +       0.03   (normalized) service=printer
+ +       0.8695 (normalized) service=private
+ +      -0.5097 (normalized) service=red_i
+ +       0.9895 (normalized) service=remote_job
+ +       1.0695 (normalized) service=rje
+ +      -2.229  (normalized) service=shell
+ +      -2.2589 (normalized) service=smtp
+ +       0.5197 (normalized) service=sql_net
+ +      -0.6597 (normalized) service=ssh
+ +       0.07   (normalized) service=sunrpc
+ +       1.3394 (normalized) service=supdup
+ +       0.7197 (normalized) service=systat
+ +      -2.4589 (normalized) service=telnet
+ +       0      (normalized) service=tftp_u
+ +       0.01   (normalized) service=tim_i
+ +      -1.8392 (normalized) service=time
+ +      -0.7596 (normalized) service=urh_i
+ +      -1.2694 (normalized) service=urp_i
+ +       2.219  (normalized) service=uucp
+ +       0.1599 (normalized) service=uucp_path
+ +       0.2299 (normalized) service=vmnet
+ +       1.7292 (normalized) service=whois
+ +      -2.2689 (normalized) service=X11
+ +       0.2899 (normalized) service=Z39_50
+ +       2.129  (normalized) flag=OTH
+ +      -4.048  (normalized) flag=REJ
+ +      -2.2988 (normalized) flag=RSTO
+ +       1.1894 (normalized) flag=RSTOS0
+ +       2.1989 (normalized) flag=RSTR
+ +       1.8291 (normalized) flag=S0
+ +      -2.6187 (normalized) flag=S1
+ +      -1.0496 (normalized) flag=S2
+ +      -0.7897 (normalized) flag=S3
+ +       1.4193 (normalized) flag=SF
+ +       0.12   (normalized) flag=SH
+ +       3.0526 (normalized) src_bytes
+ +       0.2644 (normalized) dst_bytes
+ +      -2.159  (normalized) land=1
+ +       5.4677 (normalized) wrong_fragment
+ +      -0.4298 (normalized) urgent
+ +      33.5817 (normalized) hot
+ +       4.7958 (normalized) num_failed_logins
+ +       0.2599 (normalized) logged_in=1
+ +       0.1452 (normalized) num_compromised
+ +       0.7396 (normalized) root_shell
+ +      -5.3881 (normalized) su_attempted
+ +      -0.5656 (normalized) num_root
+ +      -3.5908 (normalized) num_file_creations
+ +       0.08   (normalized) num_shells
+ +      -5.0973 (normalized) num_access_files
+ +       0      (normalized) num_outbound_cmds
+ +      -0.04   (normalized) is_host_login=1
+ +      -9.9371 (normalized) is_guest_login=1
+ +       5.2405 (normalized) count
+ +      -3.6288 (normalized) srv_count
+ +      -0.8746 (normalized) serror_rate
+ +       3.2326 (normalized) srv_serror_rate
+ +       1.4095 (normalized) rerror_rate
+ +       3.1622 (normalized) srv_rerror_rate
+ +      -0.2434 (normalized) same_srv_rate
+ +      -0.2675 (normalized) diff_srv_rate
+ +       0.4455 (normalized) srv_diff_host_rate
+ +       0.9003 (normalized) dst_host_count
+ +      -1.2509 (normalized) dst_host_srv_count
+ +       0.3157 (normalized) dst_host_same_srv_rate
+ +       0.6115 (normalized) dst_host_diff_srv_rate
+ +       1.4777 (normalized) dst_host_same_src_port_rate
+ +       1.1147 (normalized) dst_host_srv_diff_host_rate
+ +       0.2619 (normalized) dst_host_serror_rate
+ +       0.9046 (normalized) dst_host_srv_serror_rate
+ +       0.7645 (normalized) dst_host_rerror_rate
+ +       0.5128 (normalized) dst_host_srv_rerror_rate
+ -       1.92  
+
+Time taken to build model: 31.16 seconds
+
+=== Evaluation on training set ===
+
+Time taken to test model on training data: 0.28 seconds
+
+=== Summary ===
+
+Correctly Classified Instances      122947               97.5979 %
+Incorrectly Classified Instances      3026                2.4021 %
+Kappa statistic                          0.9517
+Mean absolute error                      0.024 
+Root mean squared error                  0.155 
+Relative absolute error                  4.8273 %
+Root relative squared error             31.0718 %
+Total Number of Instances           125973     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.981    0.030    0.974      0.981    0.978      0.952    0.976     0.966     normal
+                 0.970    0.019    0.978      0.970    0.974      0.952    0.976     0.963     anomaly
+Weighted Avg.    0.976    0.025    0.976      0.976    0.976      0.952    0.976     0.964     
+
+=== Confusion Matrix ===
+
+     a     b   <-- classified as
+ 66060  1283 |     a = normal
+  1743 56887 |     b = anomaly
+
+
+=== Re-evaluation on test set ===
+
+User supplied test set
+Relation:     KDDTest
+Instances:     unknown (yet). Reading incrementally
+Attributes:   42
+
+=== Summary ===
+
+Correctly Classified Instances       17116               75.9226 %
+Incorrectly Classified Instances      5428               24.0774 %
+Kappa statistic                          0.5322
+Mean absolute error                      0.2408
+Root mean squared error                  0.4907
+Total Number of Instances            22544     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.924    0.365    0.657      0.924    0.768      0.566    0.779     0.640     normal
+                 0.635    0.076    0.917      0.635    0.750      0.566    0.779     0.790     anomaly
+Weighted Avg.    0.759    0.201    0.805      0.759    0.758      0.566    0.779     0.725     
+
+=== Confusion Matrix ===
+
+    a    b   <-- classified as
+ 8971  740 |    a = normal
+ 4688 8145 |    b = anomaly
+
+

@@ -1,0 +1,373 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.meta.MultiClassClassifier -M 0 -R 2.0 -S 1 -W weka.classifiers.functions.Logistic -- -R 1.0E-8 -M -1 -num-decimal-places 4
+Relation:     KDDTrain
+Instances:    125973
+Attributes:   42
+              duration
+              protocol_type
+              service
+              flag
+              src_bytes
+              dst_bytes
+              land
+              wrong_fragment
+              urgent
+              hot
+              num_failed_logins
+              logged_in
+              num_compromised
+              root_shell
+              su_attempted
+              num_root
+              num_file_creations
+              num_shells
+              num_access_files
+              num_outbound_cmds
+              is_host_login
+              is_guest_login
+              count
+              srv_count
+              serror_rate
+              srv_serror_rate
+              rerror_rate
+              srv_rerror_rate
+              same_srv_rate
+              diff_srv_rate
+              srv_diff_host_rate
+              dst_host_count
+              dst_host_srv_count
+              dst_host_same_srv_rate
+              dst_host_diff_srv_rate
+              dst_host_same_src_port_rate
+              dst_host_srv_diff_host_rate
+              dst_host_serror_rate
+              dst_host_srv_serror_rate
+              dst_host_rerror_rate
+              dst_host_srv_rerror_rate
+              class
+Test mode:    evaluate on training data
+
+=== Classifier model (full training set) ===
+
+MultiClassClassifier
+
+Classifier 1
+Logistic Regression with ridge parameter of 1.0E-8
+Coefficients...
+                                                Class
+Variable                                       normal
+=====================================================
+duration                                       0.0001
+protocol_type=tcp                             -1.4898
+protocol_type=udp                              1.1377
+protocol_type=icmp                             1.7106
+service=aol                                   -4.8566
+service=auth                                   8.1861
+service=bgp                                  -12.0093
+service=courier                              -35.0343
+service=csnet_ns                                -40.4
+service=ctf                                  -28.5406
+service=daytime                              -11.8848
+service=discard                              -33.8086
+service=domain                                 8.3807
+service=domain_u                               8.6162
+service=echo                                 -22.8727
+service=eco_i                                  1.4311
+service=ecr_i                                  0.7244
+service=efs                                  -31.6938
+service=exec                                 -61.8216
+service=finger                                 7.8964
+service=ftp                                    7.5734
+service=ftp_data                                7.889
+service=gopher                               -16.1402
+service=harvest                              -57.9117
+service=hostnames                            -50.4488
+service=http                                   7.5819
+service=http_2784                            -19.6521
+service=http_443                             -62.1701
+service=http_8001                            -52.9541
+service=imap4                                  3.8711
+service=IRC                                   19.4247
+service=iso_tsap                              -35.466
+service=klogin                               -21.1454
+service=kshell                               -16.1424
+service=ldap                                 -60.6615
+service=link                                 -20.1025
+service=login                                -42.1597
+service=mtp                                  -19.3327
+service=name                                 -45.2785
+service=netbios_dgm                          -56.6773
+service=netbios_ns                            -9.2148
+service=netbios_ssn                           -9.4664
+service=netstat                              -53.9326
+service=nnsp                                 -10.0449
+service=nntp                                 -19.4299
+service=ntp_u                                194.6637
+service=other                                  7.8286
+service=pm_dump                              -92.0116
+service=pop_2                                -39.6792
+service=pop_3                                 10.9815
+service=printer                              -30.4289
+service=private                                1.5811
+service=red_i                                 22.4488
+service=remote_job                           -28.0337
+service=rje                                  -58.7238
+service=shell                                  8.3454
+service=smtp                                   9.9052
+service=sql_net                                -13.61
+service=ssh                                    4.9748
+service=sunrpc                               -12.8163
+service=supdup                               -62.6256
+service=systat                                -64.908
+service=telnet                                12.3341
+service=tftp_u                              3255.1702
+service=tim_i                                  2.7684
+service=time                                   9.0136
+service=urh_i                                  21.533
+service=urp_i                                  7.2332
+service=uucp                                  -15.067
+service=uucp_path                            -31.3034
+service=vmnet                                -75.4762
+service=whois                                -27.9571
+service=X11                                    8.9156
+service=Z39_50                               -26.0994
+flag=OTH                                      -4.1507
+flag=REJ                                       8.1137
+flag=RSTO                                      2.7475
+flag=RSTOS0                                  -16.0026
+flag=RSTR                                     -2.4818
+flag=S0                                       -2.7366
+flag=S1                                        9.2158
+flag=S2                                        3.5586
+flag=S3                                        3.4078
+flag=SF                                       -0.4872
+flag=SH                                        1.0555
+src_bytes                                          -0
+dst_bytes                                          -0
+land=1                                         9.1327
+wrong_fragment                               -82.3153
+urgent                                         4.0791
+hot                                           -0.3686
+num_failed_logins                             -2.4856
+logged_in=1                                    -1.037
+num_compromised                                -1.879
+root_shell                                    -3.0482
+su_attempted                                  11.8999
+num_root                                       1.9634
+num_file_creations                             0.2556
+num_shells                                    -0.8922
+num_access_files                               0.8261
+is_host_login=1                              357.6111
+is_guest_login=1                               6.9808
+count                                         -0.0176
+srv_count                                      0.0071
+serror_rate                                    1.4764
+srv_serror_rate                               -7.1318
+rerror_rate                                   -1.8867
+srv_rerror_rate                               -5.1448
+same_srv_rate                                  1.9059
+diff_srv_rate                                   1.007
+srv_diff_host_rate                            -1.6445
+dst_host_count                                -0.0085
+dst_host_srv_count                             0.0163
+dst_host_same_srv_rate                        -1.8061
+dst_host_diff_srv_rate                         -1.229
+dst_host_same_src_port_rate                    -3.218
+dst_host_srv_diff_host_rate                   -3.9365
+dst_host_serror_rate                           0.3774
+dst_host_srv_serror_rate                      -3.4968
+dst_host_rerror_rate                          -3.1201
+dst_host_srv_rerror_rate                        0.518
+Intercept                                     -1.5407
+
+
+Odds Ratios...
+                                                Class
+Variable                                       normal
+=====================================================
+duration                                       1.0001
+protocol_type=tcp                              0.2254
+protocol_type=udp                              3.1196
+protocol_type=icmp                             5.5325
+service=aol                                    0.0078
+service=auth                                 3590.819
+service=bgp                                         0
+service=courier                                     0
+service=csnet_ns                                    0
+service=ctf                                         0
+service=daytime                                     0
+service=discard                                     0
+service=domain                              4362.1864
+service=domain_u                            5520.6232
+service=echo                                        0
+service=eco_i                                  4.1834
+service=ecr_i                                  2.0635
+service=efs                                         0
+service=exec                                        0
+service=finger                               2687.723
+service=ftp                                  1945.825
+service=ftp_data                            2667.7058
+service=gopher                                      0
+service=harvest                                     0
+service=hostnames                                   0
+service=http                                1962.2959
+service=http_2784                                   0
+service=http_443                                    0
+service=http_8001                                   0
+service=imap4                                 47.9961
+service=IRC                            272915705.8044
+service=iso_tsap                                    0
+service=klogin                                      0
+service=kshell                                      0
+service=ldap                                        0
+service=link                                        0
+service=login                                       0
+service=mtp                                         0
+service=name                                        0
+service=netbios_dgm                                 0
+service=netbios_ns                             0.0001
+service=netbios_ssn                            0.0001
+service=netstat                                     0
+service=nnsp                                        0
+service=nntp                                        0
+service=ntp_u                   3.4782985073050922E84
+service=other                               2511.3258
+service=pm_dump                                     0
+service=pop_2                                       0
+service=pop_3                              58778.8753
+service=printer                                     0
+service=private                                4.8603
+service=red_i                         5615782674.0991
+service=remote_job                                  0
+service=rje                                         0
+service=shell                               4210.6911
+service=smtp                               20034.6411
+service=sql_net                                     0
+service=ssh                                  144.7232
+service=sunrpc                                      0
+service=supdup                                      0
+service=systat                                      0
+service=telnet                            227311.5488
+service=tftp_u                               Infinity
+service=tim_i                                 15.9332
+service=time                                8213.7175
+service=urh_i                         2247230659.6494
+service=urp_i                               1384.6733
+service=uucp                                        0
+service=uucp_path                                   0
+service=vmnet                                       0
+service=whois                                       0
+service=X11                                   7446.99
+service=Z39_50                                      0
+flag=OTH                                       0.0158
+flag=REJ                                    3339.7658
+flag=RSTO                                     15.6037
+flag=RSTOS0                                         0
+flag=RSTR                                      0.0836
+flag=S0                                        0.0648
+flag=S1                                    10054.8467
+flag=S2                                       35.1155
+flag=S3                                       30.1978
+flag=SF                                        0.6143
+flag=SH                                        2.8735
+src_bytes                                           1
+dst_bytes                                           1
+land=1                                      9253.0334
+wrong_fragment                                      0
+urgent                                        59.0924
+hot                                            0.6917
+num_failed_logins                              0.0833
+logged_in=1                                    0.3545
+num_compromised                                0.1527
+root_shell                                     0.0474
+su_attempted                               147257.596
+num_root                                       7.1234
+num_file_creations                             1.2912
+num_shells                                     0.4098
+num_access_files                               2.2843
+is_host_login=1                2.0348091100402778E155
+is_guest_login=1                            1075.8077
+count                                          0.9825
+srv_count                                      1.0071
+serror_rate                                     4.377
+srv_serror_rate                                0.0008
+rerror_rate                                    0.1516
+srv_rerror_rate                                0.0058
+same_srv_rate                                  6.7255
+diff_srv_rate                                  2.7373
+srv_diff_host_rate                             0.1931
+dst_host_count                                 0.9915
+dst_host_srv_count                             1.0164
+dst_host_same_srv_rate                         0.1643
+dst_host_diff_srv_rate                         0.2926
+dst_host_same_src_port_rate                      0.04
+dst_host_srv_diff_host_rate                    0.0195
+dst_host_serror_rate                           1.4584
+dst_host_srv_serror_rate                       0.0303
+dst_host_rerror_rate                           0.0442
+dst_host_srv_rerror_rate                       1.6787
+
+
+
+
+Time taken to build model: 92.38 seconds
+
+=== Evaluation on training set ===
+
+Time taken to test model on training data: 0.68 seconds
+
+=== Summary ===
+
+Correctly Classified Instances      122853               97.5233 %
+Incorrectly Classified Instances      3120                2.4767 %
+Kappa statistic                          0.9502
+Mean absolute error                      0.0358
+Root mean squared error                  0.1325
+Relative absolute error                  7.1857 %
+Root relative squared error             26.5571 %
+Total Number of Instances           125973     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.982    0.032    0.972      0.982    0.977      0.950    0.997     0.995     normal
+                 0.968    0.018    0.979      0.968    0.973      0.950    0.997     0.997     anomaly
+Weighted Avg.    0.975    0.026    0.975      0.975    0.975      0.950    0.997     0.996     
+
+=== Confusion Matrix ===
+
+     a     b   <-- classified as
+ 66115  1228 |     a = normal
+  1892 56738 |     b = anomaly
+
+
+=== Re-evaluation on test set ===
+
+User supplied test set
+Relation:     KDDTest
+Instances:     unknown (yet). Reading incrementally
+Attributes:   42
+
+=== Summary ===
+
+Correctly Classified Instances       17045               75.6077 %
+Incorrectly Classified Instances      5499               24.3923 %
+Kappa statistic                          0.5266
+Mean absolute error                      0.2437
+Root mean squared error                  0.4725
+Total Number of Instances            22544     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.926    0.372    0.653      0.926    0.766      0.562    0.777     0.581     normal
+                 0.628    0.074    0.918      0.628    0.746      0.562    0.777     0.864     anomaly
+Weighted Avg.    0.756    0.203    0.804      0.756    0.754      0.562    0.777     0.742     
+
+=== Confusion Matrix ===
+
+    a    b   <-- classified as
+ 8988  723 |    a = normal
+ 4776 8057 |    b = anomaly
+
