@@ -1,0 +1,19 @@
+\contentsline {section}{\numberline {1}Introduction}{3}{}%
+\contentsline {paragraph}{}{3}{}%
+\contentsline {section}{\numberline {2}Data Access Attacks}{3}{}%
+\contentsline {paragraph}{Attack}{3}{}%
+\contentsline {paragraph}{Defense}{3}{}%
+\contentsline {section}{\numberline {3}Indirect Poisoning Attacks}{3}{}%
+\contentsline {paragraph}{Attack}{3}{}%
+\contentsline {paragraph}{Defense}{3}{}%
+\contentsline {section}{\numberline {4}Direct Poisoning Attacks}{3}{}%
+\contentsline {paragraph}{Attack}{3}{}%
+\contentsline {paragraph}{Defense}{4}{}%
+\contentsline {section}{\numberline {5}Evasion Attacks}{4}{}%
+\contentsline {paragraph}{Attack}{4}{}%
+\contentsline {paragraph}{Defense}{4}{}%
+\contentsline {section}{\numberline {6}Oracle Attacks}{4}{}%
+\contentsline {paragraph}{Attack}{4}{}%
+\contentsline {paragraph}{Defense}{4}{}%
+\contentsline {section}{\numberline {7}Conclusion}{4}{}%
+\contentsline {paragraph}{}{4}{}%
