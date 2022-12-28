@@ -1,3 +1,9 @@
 env/
 data/
 raw/
+
+__pycache__/
+.ipynb_checkpoints/
+*/artefacts/3/*.csv
+*/artefacts/5/*.csv
+*/artefacts/6/*.joblib

@@ -1,0 +1,1 @@
+{"model": "random_forest", "best_parameters": {"clf__n_estimators": 60, "clf__min_samples_split": 8, "clf__min_samples_leaf": 1, "clf__max_features": "sqrt", "clf__max_depth": 8, "clf__criterion": "entropy", "clf__class_weight": "balanced"}, "best_score": 0.9828255112463088}
