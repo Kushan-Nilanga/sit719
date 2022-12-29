@@ -1,1 +1,1 @@
-{"model": "svm", "best_parameters": {"clf__estimator__kernel": "rbf", "clf__estimator__gamma": "scale", "clf__estimator__degree": 3, "clf__estimator__class_weight": null, "clf__estimator__C": 10}, "best_score": 0.995490632575616}
+{"model": "svm", "best_parameters": {"clf__estimator__kernel": "rbf", "clf__estimator__gamma": "scale", "clf__estimator__degree": 4, "clf__estimator__class_weight": null, "clf__estimator__C": 10}, "best_score": 0.995490632575616}

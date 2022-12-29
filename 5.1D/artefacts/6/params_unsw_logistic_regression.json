@@ -1,1 +1,1 @@
-{"model": "logistic_regression", "best_parameters": {"clf__estimator__penalty": "l2", "clf__estimator__class_weight": null, "clf__estimator__C": 100}, "best_score": 0.9740922597546037}
+{"model": "logistic_regression", "best_parameters": {"clf__estimator__penalty": "l2", "clf__estimator__class_weight": null, "clf__estimator__C": 100}, "best_score": 0.9701376506556837}

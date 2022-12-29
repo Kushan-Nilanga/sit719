@@ -1,1 +1,1 @@
-{"model": "decision_tree", "best_parameters": {"clf__min_samples_split": 10, "clf__min_samples_leaf": 5, "clf__max_features": null, "clf__max_depth": 9, "clf__criterion": "gini", "clf__class_weight": null}, "best_score": 0.9875842415690523}
+{"model": "decision_tree", "best_parameters": {"clf__min_samples_split": 8, "clf__min_samples_leaf": 5, "clf__max_features": null, "clf__max_depth": 8, "clf__criterion": "gini", "clf__class_weight": null}, "best_score": 0.9875842415690523}
