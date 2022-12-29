@@ -1,0 +1,1 @@
+{"model": "knn", "best_parameters": {"clf__weights": "distance", "clf__p": 2, "clf__n_neighbors": 9, "clf__leaf_size": 50, "clf__algorithm": "kd_tree"}, "best_score": 0.8342692268439142}

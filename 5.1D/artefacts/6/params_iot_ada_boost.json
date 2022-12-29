@@ -1,0 +1,1 @@
+{"model": "ada_boost", "best_parameters": {"clf__estimator__n_estimators": 60, "clf__estimator__learning_rate": 1, "clf__estimator__algorithm": "SAMME.R"}, "best_score": 0.8290336347085097}
