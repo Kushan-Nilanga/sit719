@@ -1,1 +1,1 @@
-{"model": "random_forest", "best_parameters": {"clf__n_estimators": 90, "clf__min_samples_split": 5, "clf__min_samples_leaf": 9, "clf__max_features": null, "clf__max_depth": null, "clf__criterion": "entropy", "clf__class_weight": "balanced"}, "best_score": 0.8356177812365014}
+{"model": "random_forest", "best_parameters": {"clf__n_estimators": 70, "clf__min_samples_split": 8, "clf__min_samples_leaf": 8, "clf__max_features": null, "clf__max_depth": null, "clf__criterion": "gini", "clf__class_weight": "balanced"}, "best_score": 0.8348806401371366}

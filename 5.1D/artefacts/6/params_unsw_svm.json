@@ -1,1 +1,0 @@
-{"model": "svm", "best_parameters": {"clf__estimator__kernel": "linear", "clf__estimator__gamma": "scale", "clf__estimator__degree": 6, "clf__estimator__class_weight": null, "clf__estimator__C": 1}, "best_score": 0.9682562964623468}

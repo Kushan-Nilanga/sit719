@@ -1,1 +1,1 @@
-{"model": "knn", "best_parameters": {"clf__weights": "distance", "clf__p": 2, "clf__n_neighbors": 9, "clf__leaf_size": 10, "clf__algorithm": "auto"}, "best_score": 0.9890189773634009}
+{"model": "knn", "best_parameters": {"clf__weights": "distance", "clf__p": 1, "clf__n_neighbors": 8, "clf__leaf_size": 30, "clf__algorithm": "auto"}, "best_score": 0.9885581466095035}
