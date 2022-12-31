@@ -1,1 +1,1 @@
-`tree | while read line; do echo -n "$line <br/>\n"; done > readme.md`
+`echo "<pre>$(tree)</pre>" > readme.md`
