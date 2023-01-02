@@ -27,7 +27,11 @@ author: Don Athalage
     - [Evaluations](#evaluations)
   - [Data Visualization](#data-visualization)
     - [NSL-KDD Results](#nsl-kdd-results)
+      - [Confusion Matrices](#confusion-matrices)
+      - [Model Performances](#model-performances)
     - [IoT Results](#iot-results)
+      - [Confusion Matrices](#confusion-matrices-1)
+      - [Model Performances](#model-performances-1)
   - [Conclusion](#conclusion)
 
 <div style="page-break-after: always;"></div>
@@ -702,12 +706,71 @@ During the previous steps data about model performances, tuning times, training 
 
 ### NSL-KDD Results
 
-### IoT Results
+#### Confusion Matrices
+Outputs from the validation phase was used to plot confusion matrices. All of the models perform similarly with some notable observations.
+
+- Majority of the predicted `u2r` attacks are actually `benign`.
+- Some of the predicted `dos` attacks are actually `benign`.
+
+Possible reasons for this situation would be that we are upsampling `dos`, `u2r`, `l2r` and `probe` attacks. This means that the model is learning to predict `benign` more than the other attack types. This is a possible reason for the model predicting `benign` more than the other attack types.
 
 ![kdd_cm](../artefacts//7/kdd_cm.png)
-![kdd_results](../artefacts//7/iot_results.png)
+> Greener the colour, higher values in the confusion matrix.
+
+This confusion matrix suggest the classification results of each of the models are promising. However, inorder to understand the complete picture of the model performances, we need to look at the model performances.
+
+#### Model Performances
+Results from each of the end to end project steps have been plotted as a heat map in this section. These metrics include,
+- Hyperparameter tuning
+  - Score - `roc_auc`
+  - Time
+- Training
+  - Score - `roc_auc`
+  - Time
+- Evaluation
+  - F1 Score
+  - Accuracy
+  - Precision
+  - Recall
+  - Time
+
+These metrics will allow us to apply the machine learning models appropriately to specific scenarios. For example, if we are looking for a model that can be used in real time, we can choose a model that has a low training time and evaluation time. If we are looking for a model that can be used in a batch processing environment, we can choose a model that has a high training time and evaluation time. 
+
+![kdd_results](../artefacts//7/kdd_results.png)
+
+This diagram provides a good overview of the model performances. The following observations can be made from the diagram,
+- Logistic Regression has performed the best in terms of F1 score, accuracy, precision and recall. It also had a relatively lower training time compared to other models.
+- KNN model is potentially overfitted as the training score is 1.0 and the test score is 0.9999. This model also took a long time to train and evaluate.
+- KNN test training times are significantly higher compared to other models. 
+- *Logistic Regression is the overall best model in terms of F1 score, accuracy, precision and recall. It also had a relatively lower training time compared to other models.*
+
+> ⚠︎ SVM results shown are not acurate as the model took too long to train and evaluate and was terminated before completion.
+> 
+> KNN `test.score` is shown as 1 however this is due to rounding off actual value is closer to 0.9999. This model is potentially overfitted. 
+
+### IoT Results
+Similar to NSL-KDD results, confusion matrices and model performances are plotted for IoT dataset.
+
+#### Confusion Matrices
+Since this is also a multi-class classification problem, confusion matrices are plotted to visualise the model performances. The following observations can be made from the confusion matrices. Although the models perform similarly, there are some notable observations.
+- Logistic regression has done significantly worse in classification of the dataset compared to other models.
+- Adaboost and Multilayer has also done significantly worse in classification of the dataset compared to other models.
+- Random Forest and Decision Tree have performed the best in classification of the dataset.
 
 ![iot_cm](../artefacts//7/iot_cm.png)
+
+#### Model Performances
+Results from each of the end to end project steps have been plotted as a heat map in this section. 
+
 ![iot_results](../artefacts//7/iot_results.png)
+- KNN algorithm had the best F1 score, accuracy, precision and recall. However, it took a long time to evaluate.
+- MLP and Decision Tree has comparable F1 scores, accuracy, precision and recall. However, MLP took a long time to train.
+- Logistic Regression has the worst F1 score, accuracy, precision and recall. However, it took a relatively shorter time to train and evaluate.
+
+> SVM Models have not been included in the results as they took too long to train and evaluate.
 
 ## Conclusion
+
+We have thoroughly analysed the NSL-KDD and IoT datasets. We have also applied machine learning models to the datasets and evaluated the model performances. The following observations can be made from the analysis,
+- The NSL-KDD dataset is a multi-class classification problem with 5 attack types. The dataset is imbalanced with `benign` attacks being the majority class. The best performing model was Logistic Regression with an F1 score of 0.7795.
+- IoT dataset is a multi-class classification problem with 2 classes. The best performing model was KNN with an F1 score of 0.8695.
