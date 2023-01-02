@@ -155,12 +155,12 @@ def preprocess_kdd(kdd: pd.DataFrame):
 ## Model Selection
 
 This report analyses the performance of following models.
-**Ada Boost**
-**Decision Tree**
-**K Nearest Neighbors**
-**Logistic Regression**
-**Multilayer Perceptron**
-**Random Forest**
+- Ada Boost
+- Decision Tree
+- K Nearest Neighbors
+- Logistic Regression
+- Multilayer Perceptron
+- Random Forest
 
 > Support Vector Machine is not used as it takes a long time to train the model.
 
@@ -258,7 +258,10 @@ def best_parameters(x_train, y_train, dataset_name):
 
 
 **Decision Tree**\
-Decision Tree model is a supervised learning algorithm that is used for both classification and regression problems. It is a tree-like model of decisions and their possible consequences, including chance event outcomes, resource costs, and utility. It is one of the predictive modelling approaches used in machine learning. It is a non-parametric supervised learning method used for classification and regression. The goal is to create a model that predicts the value of a target variable by learning simple decision rules inferred from the data features. The below grid space is used for hyperparameter tuning.
+Decision Tree model is a supervised learning algorithm that is used for both classification and regression problems. It is a tree-like graph of decisions and their possible consequences, including chance event outcomes, resource costs, and utility. Decision tree aims to create a model that predicts the value of a target variable by learning simple decision rules inferred from the data. The below grid space is used for hyperparameter tuning<sup>[1]</sup>.
+
+- [1] Sun, S. and Iwaihara, M., Finding Member Articles for Wikipedia Lists.
+
 
 <pre>decision_tree_param_grid = {
     'clf__criterion': ['gini', 'entropy'],
@@ -288,9 +291,7 @@ Details of each of these parameters can be found in the [sklearn documentation](
 
 
 **KNN**\
-KNN is a non-parametric method used for classification and regression. In both cases, the input consists of the k closest training examples in the feature space. The output depends on whether k-NN is used for classification or regression.
-
-In k-NN classification, the output is a class membership. An object is classified by a majority vote of its neighbors, with the object being assigned to the class most common among its k nearest neighbors (k is a positive integer, typically small). If k = 1, then the object is simply assigned to the class of that single nearest neighbor. Below is the grid space used for hyperparameter tuning.
+K nearest neighbors is a simple yet effective algorithm used to classify data classes. KNN work by finding the k nearest neighbors to a data point, and then using these datapoints to classify the class that is most common among its k nearest neighbors. The below grid space is used for hyperparameter tuning.
 
 <pre>knn_param_grid = {
     'clf__n_neighbors': [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
@@ -303,7 +304,9 @@ Details of each of these parameters can be found in the [sklearn documentation](
 
 
 **Logistic Regression**\
-Logistic regression is a statistical model that in its basic form uses a logistic function to model a binary dependent variable, although many more complex extensions exist. In regression analysis, logistic regression (or logit regression) is estimating the parameters of a logistic model (a form of binary regression). Below is the grid space used for hyperparameter tuning.
+Logistic regression is a statistical model that in its basic form uses a logistic function (sigmoid) to model a binary dependent variable, although many more complex extensions exist<sup>[2]</sup>. Below is the grid space used for hyperparameter tuning.
+
+- [2] Guo, G., Wang, H., Bell, D., Bi, Y. and Greer, K., 2003, November. KNN model-based approach in classification. In OTM Confederated International Conferences" On the Move to Meaningful Internet Systems" (pp. 986-996). Springer, Berlin, Heidelberg.
 
 <pre>logistic_regression_param_grid = {
     'clf__estimator__penalty': ['l2'],
@@ -313,7 +316,7 @@ Logistic regression is a statistical model that in its basic form uses a logisti
 Details of each of these parameters can be found in the [sklearn documentation](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html).
 
 **SVM**\
-Support vector machines (SVMs, also support vector networks) are supervised learning models with associated learning algorithms that analyze data used for classification and regression analysis. Given a set of training samples, each marked as belonging to one or the other of two categories, an SVM training algorithm builds a model that assigns new test samples to one category or the other, making it a non-probabilistic binary linear classifier. Below is the grid space used for hyperparameter tuning.
+Support vector machines are supervised classification models that attempt to find a hyperplane that separates the data into classes. These hyperplanes are found by fitting different function to the dataset and then picking the one that satisfies to gain the best performance. We can use OneVsRestClassifier to train a separate classifier for each class. Below is the grid space used for hyperparameter tuning.
 
 <pre>svm_param_grid = {
     'clf__estimator__C': [0.001, 0.01, 0.1, 1, 10, 100, 1000],
@@ -326,7 +329,7 @@ Support vector machines (SVMs, also support vector networks) are supervised lear
 Details of each of these parameters can be found in the [sklearn documentation](https://scikit-learn.org/stable/modules/generated/sklearn.svm.SVC.html).
 
 **MLP**\
-MLP is a supervised learning algorithm that learns a function f(x) by training on a dataset, where x is the input and y is the output. Given a set of features x = {x1, x2, …, xn} and a target y, it can learn a non-linear function approximator for either classification or regression. Below is the grid space used for hyperparameter tuning.
+MLP is a supervised learning algorithm that learns a function f(x) by training on a dataset, where x is the input and y is the output. Given a set of features and a target, it can learn a function approximator for either classification or regression. MLP has evolved on to becoming deep learning domain of machine learning. Below is the grid space used for hyperparameter tuning.
 
 <pre>mlp_param_grid = {
     'clf__hidden_layer_sizes': [(10,), (20,), (30,), (40,), (50,), (60,), (70,), (80,), (90,), (100,)],
